@@ -1,0 +1,30 @@
+.character-sidebar {
+
+    width: 20vw;
+    border: 2px solid red;
+
+}
+
+
+.character-panel {
+    display: flex;
+
+    background: grey;
+
+    border: 1px solid white;
+
+    height: 10%;
+    width: 100%;
+}
+
+.character-panel h2 {
+    margin-left: auto;
+    align-self: center;
+}
+
+.character-panel img {
+
+    height: 50px;
+    width: 50px;
+
+}

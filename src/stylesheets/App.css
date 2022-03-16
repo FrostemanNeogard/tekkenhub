@@ -1,4 +1,22 @@
+/* Generic boilerplate stuff */
+body, html {
+    padding: 0; margin: 0;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Variables */
+:root {
+
+}
+
+
+/* Actual content */
 .App {
+    max-width: 100vw;
+    min-height: 100vh;
+
     background-color: black;
     color: white;
 }
