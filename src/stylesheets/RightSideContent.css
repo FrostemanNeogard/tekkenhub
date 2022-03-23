@@ -1,0 +1,12 @@
+.right-side-content {
+    overflow: hidden;
+    padding: 4rem;
+    padding-top: 0;
+}
+
+.right-side-content .character-information {
+
+    background-color: rgb(59, 59, 59);
+    padding: 3rem;
+
+}
