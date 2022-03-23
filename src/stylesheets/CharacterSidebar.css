@@ -50,3 +50,41 @@
 .character-panel:hover img {
     filter: drop-shadow(0.1rem -0.1rem 0.2rem white);
 }
+
+
+@media screen and (max-width: 950px) {
+
+    .character-sidebar {
+        width: 100%;
+        float: none;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 2%;
+    }
+
+    .character-panel {
+        width: 7.5rem;
+        height: 3rem;
+        border-radius: 1em;
+        margin: 5px;
+        pointer-events: none;
+        padding: 0;
+    }
+
+    .character-panel h2 {
+        font-size: 0.8rem;
+        margin: auto;
+        margin-top: auto;
+        margin-bottom: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    .character-panel img {
+        height: 100%;
+        width: auto;
+    }
+
+}
