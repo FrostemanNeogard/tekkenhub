@@ -1,11 +1,9 @@
-import '../stylesheets/CharacterSidebar.css';
+import '../../stylesheets/CharacterSidebar.css';
 
 function CharacterSidebar() {
     return (
         <section className="character-sidebar">
-        
             <GetCharacterPanels />
-
         </section>
     )
 }
@@ -19,7 +17,7 @@ function GetCharacterPanels() {
     let characterArray = GetCharacters();
 
     // Get all images from ../images/character_panels
-    let characterImages = ImportAll(require.context('./../images/character_panels', false, /\.png$/));
+    let characterImages = ImportAll(require.context('../../images/character_panels/small', false, /\.png$/));
 
     // For each character, create a character-panel article for them
     for (let i = 0; i < characterArray.length; i++) {
@@ -41,10 +39,56 @@ function GetCharacterPanels() {
 // which is used in the creation of their panels in the sidebar
 function GetCharacters() {
     return [
-        'Bryan',
+        'Akuma',
+        'Alisa',
+        'Anna',
+        'Armor King',
+        'Asuka',
         'Bob',
-        'Chloe',
-        'Lee'
+        'Bryan',
+        'Claudio',
+        'Devil Jin',
+        'Dragunov',
+        'Eddy',
+        'Eliza',
+        'Fahkumram',
+        'Feng',
+        'Ganryu',
+        'Geese',
+        'Gigas',
+        'Heihachi',
+        'Hwoarang',
+        'Jack-7',
+        'Jin',
+        'Josie',
+        'Julia',
+        'Katarina',
+        'Kazumi',
+        'Kazuya',
+        'King',
+        'Kuma/Panda',
+        'Kunimitsu',
+        'Lars',
+        'Law',
+        'Lee',
+        'Lei',
+        'Leo',
+        'Leroy',
+        'Lidia',
+        'Lili',
+        'Lucky Chloe',
+        'Marduk',
+        'Master Raven',
+        'Miguel',
+        'Negan',
+        'Nina',
+        'Noctis',
+        'Paul',
+        'Shaheen',
+        'Steve',
+        'Xiaoyu',
+        'Yoshimitsu',
+        'Zafina'
     ]
 }
 
