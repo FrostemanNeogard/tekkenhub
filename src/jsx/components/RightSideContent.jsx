@@ -1,9 +1,8 @@
 import '../../stylesheets/RightSideContent.css'
 import Bryan from '../character_pages/Bryan';
+import Devil_jin from '../character_pages/Devil jin';
 import { Component } from 'react';
 
-/* Add some sort of state management that changes which component is rendered here
-based on which character is focued in the CharacterSidebar component */
 class RightSideContent extends Component {
     render() {
         return(
@@ -13,11 +12,12 @@ class RightSideContent extends Component {
     )}
 }
 
-
 function GetSelectedCharacter(props) {
     switch(props.name) {
         case 'Bryan':
             return <Bryan />;
+        case 'Devil Jin':
+            return <Devil_jin />;
         default:
             return <h1>Welcome page</h1>
     }
