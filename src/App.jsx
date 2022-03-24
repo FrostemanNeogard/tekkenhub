@@ -5,13 +5,20 @@ import RightSideContent from './jsx/components/RightSideContent';
 import { Component } from 'react';
 
 class App extends Component {
+
+	state = { charName: '' };
+
+	changeState = (name) => {
+		this.setState({ data: name})
+	}
+
   	render() {
   		return (
   			<div className="App">
 		  
   	      		<TopBar />
-  	      		<CharacterSidebar />
-  	      		<RightSideContent name=''/>
+  	      		<CharacterSidebar func={this.changeState}/>
+  	      		<RightSideContent name={this.state.data}/>
 		
   	    	</div>
   	  	);
