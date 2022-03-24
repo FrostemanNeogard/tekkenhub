@@ -1,4 +1,6 @@
 import '../../stylesheets/CharacterSidebar.css';
+import App from '../../App';
+import RightSideContent from './RightSideContent';
 
 function CharacterSidebar() {
     return (
@@ -9,7 +11,7 @@ function CharacterSidebar() {
 }
 
 // Function to create an article for each character including an image and a heading
-function GetCharacterPanels() {
+const GetCharacterPanels = () => {
 
     let returnHTML = [];
 
@@ -19,14 +21,19 @@ function GetCharacterPanels() {
     // Get all images from ../images/character_panels
     let characterImages = ImportAll(require.context('../../images/character_panels/small', false, /\.png$/));
 
+
     // For each character, create a character-panel article for them
     for (let i = 0; i < characterArray.length; i++) {
         returnHTML.push (
-            <article className="character-panel" key={`character-panel-${i}`}>
-
+            <article 
+                className="character-panel" 
+                key={`character-panel-${characterArray[i]}`}
+                onClick={() => { 
+                    RightSideContent.name = characterArray[i]
+                }}
+            >
                 <img src={characterImages[i]} alt={characterArray[i]} />
                 <h2>{characterArray[i]}</h2>
-
             </article>
         )
     }
