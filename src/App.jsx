@@ -6,20 +6,26 @@ import { Component } from 'react';
 
 class App extends Component {
 
-	state = { charName: '' };
+	// Set the default loaded page
+	state = { charName: 'Bryan' };
 
+	// Function for changing the laoded page that gets run in the character panels as well
+	// as the home button
 	changeState = (name) => {
-		this.setState({ data: name})
+		this.setState({ charName: name})
 	}
 
   	render() {
   		return (
-  			<div className="App">
-		  
-  	      		<TopBar />
-  	      		<CharacterSidebar func={this.changeState}/>
-  	      		<RightSideContent name={this.state.data}/>
-		
+  			<div className="App"> 
+				<nav>
+					<TopBar func={this.changeState}/>
+					<CharacterSidebar func={this.changeState}/>
+				</nav>
+
+				<div id="content">
+					<RightSideContent name={this.state.charName}/>
+				</div>
   	    	</div>
   	  	);
   	}

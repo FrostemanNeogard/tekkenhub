@@ -1,4 +1,4 @@
-function Devil_jin() {
+function DevilJin() {
     return (
         <section className='character-information'>     
             <article className="introduction">
@@ -9,4 +9,4 @@ function Devil_jin() {
     )
 }
 
-export default Devil_jin;
+export default DevilJin;

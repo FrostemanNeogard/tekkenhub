@@ -1,13 +1,20 @@
 import '../../stylesheets/TopBar.css';
+import { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHouseChimney } from '@fortawesome/free-solid-svg-icons'
 
-function TopBar() {
-    return (
-        <div className="top-bar">
-            <button><FontAwesomeIcon icon={faHouseChimney} /> Home</button>
-        </div>
-    )
+class TopBar extends Component {
+    render() {   
+        return (
+            <div className="top-bar">
+                <button
+                    className='home-button'
+                    onClick={() => {this.props.func('home')}}>
+                        <FontAwesomeIcon icon={faHouseChimney} /> Home
+                </button>
+            </div>
+        )
+    }
 }
 
 export default TopBar;

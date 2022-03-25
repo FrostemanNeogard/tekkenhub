@@ -1,6 +1,7 @@
 import '../../stylesheets/RightSideContent.css'
+import HomePage from '../components/HomePage';
 import Bryan from '../character_pages/Bryan';
-import Devil_jin from '../character_pages/Devil jin';
+import DevilJin from '../character_pages/DevilJin';
 import { Component } from 'react';
 
 class RightSideContent extends Component {
@@ -14,12 +15,12 @@ class RightSideContent extends Component {
 
 function GetSelectedCharacter(props) {
     switch(props.name) {
-        case 'Bryan':
-            return <Bryan />;
-        case 'Devil Jin':
-            return <Devil_jin />;
+        case 'home': return <HomePage />;
+        case 'Bryan': return <Bryan />;
+        case 'Devil Jin': return <DevilJin />;
+
         default:
-            return <h1>Welcome page</h1>
+            return <h1>This page does not exist yet.</h1>
     }
 }
 
