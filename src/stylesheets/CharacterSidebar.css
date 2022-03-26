@@ -70,8 +70,13 @@
         height: 3rem;
         border-radius: 1em;
         margin: 5px;
-        pointer-events: none;
         padding: 0;
+    }
+
+    .character-panel:focus {
+        z-index: 1;
+        left: 0;
+        bottom: 1rem;
     }
 
     .character-panel h2 {
