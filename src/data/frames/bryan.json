@@ -1,0 +1,11 @@
+{
+    "1": {
+        "input": "1",
+        "impact": 10,
+        "damage": 8,
+        "hit": 8,
+        "block": 1,
+        "counter": 8,
+        "notes": ""
+    }
+}

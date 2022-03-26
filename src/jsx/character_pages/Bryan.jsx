@@ -1,13 +1,69 @@
-function Bryan() {
+import React, { Component } from 'react';
+import BryanFrames from '../../data/frames/bryan.json';
+import Framedata from '../components/Framedata';
+
+class Bryan extends Component {
+
+    state = { displayFrames: false };
+
+    changeState = (doDisplayFrames) => {
+        this.setState({displayFrames: doDisplayFrames});
+    }
+
+    render() {   
+
+        // Display frame data if displayFrames is set to true
+        if (this.state.displayFrames) {
+            return (
+                <section className="character-guide">
+                    <CharacterTopbar func={this.changeState} displayingFrames={this.state.displayFrames}/>
+                    <Framedata frames={BryanFrames}/>
+                </section>
+            )
+        }
+
+        // Display character guide if displayFrames is set to false
+        return (
+            <section className='character-guide'>
+                <CharacterTopbar func={this.changeState} displayingFrames={this.state.displayFrames}/>
+                <Introduction />
+                <Playstyle />
+                <Punishment />
+                <Combos />
+                <Counterplay />
+            </section>
+        )   
+    }
+}
+
+function CharacterTopbar(props) {
+
+    // If displayingFrames is true, return a character guide button...
+    if (props.displayingFrames) {
+        return (
+            <section className="character-topbar">
+                <button 
+                    onClick={() => {
+                        props.func(false);
+                    }}>
+                        Character Guide
+                </button>
+            </section>
+        )
+    }
+
+    // ...otherwise (if displayingFrames is false), return a frame data button
     return (
-        <section className='character-guide'>     
-            <Introduction />
-            <Playstyle />
-            <Punishment />
-            <Combos />
-            <Counterplay />
+        <section className="character-topbar">
+            <button 
+                onClick={() => {
+                    props.func(true);
+                }}>
+                    Frame Data
+            </button>
         </section>
-    )   
+    )
+
 }
 
 function Introduction() {
@@ -35,77 +91,136 @@ function Punishment() {
 
             {/* Standing Punishment */}
             <h3>Standing</h3>
-            <table>
-                <tr>
-                    <th>Impact</th>
-                    <th>Input</th>
-                    <th>Damage</th>
-                    <th>Advantage</th>
-                    <th>Notes</th>
-                </tr>
-                <tr>
-                    <td>i10</td>
-                    <td>1,4 | 2,3</td>
-                    <td>22 | 25</td>
-                    <td>+4 | +6</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>i12</td>
-                    <td>4,3</td>
-                    <td>27</td>
-                    <td>+2</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>i13</td>
-                    <td>d/f+21</td>
-                    <td>25</td>
-                    <td>+8</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>i14</td>
-                    <td>f,b+2</td>
-                    <td>20</td>
-                    <td>Launch</td>
-                    <td></td>
-                </tr>
+            <table className='punishment'>
+                <tbody>
+                    <tr>
+                        <th>Impact</th>
+                        <th>Input</th>
+                        <th>Damage</th>
+                        <th>Hit</th>
+                        <th>Notes</th>
+                    </tr>
+                    <tr>
+                        <td>i10</td>
+                        <td>1,4</td>
+                        <td>21</td>
+                        <td>+4</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>i10</td>
+                        <td>2,3</td>
+                        <td>24</td>
+                        <td>+6</td>
+                        <td>Shorter range than 1,4</td>
+                    </tr>
+                    <tr>
+                        <td>i12</td>
+                        <td>4,3</td>
+                        <td>27</td>
+                        <td>+2</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>i13</td>
+                        <td>d/f+2,1</td>
+                        <td>23</td>
+                        <td>+8</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>i14</td>
+                        <td>f,b+2</td>
+                        <td>20</td>
+                        <td>Launch</td>
+                        <td>High</td>
+                    </tr>
+                    <tr>
+                        <td>i14 (long range)</td>
+                        <td>f,f+2</td>
+                        <td>32</td>
+                        <td>KND</td>
+                        <td>High</td>
+                    </tr>
+                    <tr>
+                        <td>i15 (mid)</td>
+                        <td>f+2,1,4</td>
+                        <td>42</td>
+                        <td>KND</td>
+                        <td>Mid</td>
+                    </tr>
+                    <tr>
+                        <td>i15 (wallbreak)</td>
+                        <td>d/b+1+2</td>
+                        <td>39</td>
+                        <td>KND</td>
+                        <td>Mid, wallbreak</td>
+                    </tr>
+                    <tr>
+                        <td>i16 (wall)</td>
+                        <td>b+4</td>
+                        <td>18</td>
+                        <td>+15</td>
+                        <td>Mid</td>
+                    </tr>
+                    <tr>
+                        <td>i18</td>
+                        <td>f+4,1</td>
+                        <td>20</td>
+                        <td>Juggle</td>
+                        <td>Mid, long range</td>
+                    </tr>
+                    <tr>
+                        <td>i18 (rage)</td>
+                        <td>RD</td>
+                        <td>30</td>
+                        <td>Launch</td>
+                        <td>Mid, long range</td>
+                    </tr>
+                </tbody>
             </table>
 
             {/* Crouching Punishment */}
             <h3>Crouching</h3>
-            <table>
-                <tr>
-                    <th>Impact</th>
-                    <th>Input</th>
-                    <th>Damage</th>
-                    <th>Advantage</th>
-                    <th>Notes</th>
-                </tr>
-                <tr>
-                    <td>i10</td>
-                    <td>FC1</td>
-                    <td>5</td>
-                    <td>+5</td>
-                    <td>Generic</td>
-                </tr>
-                <tr>
-                    <td>i11</td>
-                    <td>WS+4</td>
-                    <td>18</td>
-                    <td>+6</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>i12</td>
-                    <td>WS+3</td>
-                    <td>20</td>
-                    <td>+5</td>
-                    <td></td>
-                </tr>
+            <table className='punishment'>
+                <tbody>
+                    <tr>
+                        <th>Impact</th>
+                        <th>Input</th>
+                        <th>Damage</th>
+                        <th>Hit</th>
+                        <th>Notes</th>
+                    </tr>
+                    <tr>
+                        <td>i10</td>
+                        <td>FC1</td>
+                        <td>5</td>
+                        <td>+6</td>
+                        <td>Generic</td>
+                    </tr>
+                    <tr>
+                        <td>i11</td>
+                        <td>WS+4</td>
+                        <td>16</td>
+                        <td>+5</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>i12</td>
+                        <td>WS+3</td>
+                        <td>18</td>
+                        <td>+4</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>i30 (Dragon tail)</td>
+                        <td>cc, d/f+3</td>
+                        <td>27</td>
+                        <td>Launch</td>
+                        <td></td>
+                    </tr>
+                </tbody>
             </table>
-
         </section>
     )
 }
