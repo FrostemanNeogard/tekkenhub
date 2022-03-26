@@ -1,7 +1,22 @@
 function Framedata(props) {
-    let frameData = JSON.stringify(props.frames);
 
-    console.log('Frames: ' + frameData);
+    let frameData = JSON.parse(JSON.stringify(props.frames));
+
+    let returnHTML = [];
+
+    for (let i = 0; i < frameData.length; i++) {
+        returnHTML.push(
+            <tr key={`framedata-row-${i}`}>
+                <td>{frameData[i].input}</td>
+                <td>{frameData[i].impact}</td>
+                <td>{frameData[i].damage}</td>
+                <td>{frameData[i].hit}</td>
+                <td>{frameData[i].block}</td>
+                <td>{frameData[i].counter}</td>
+                <td>{frameData[i].notes}</td>
+            </tr>
+        )
+    }
 
     return (
         <table className="framedata">
@@ -15,15 +30,7 @@ function Framedata(props) {
                     <th>Counter</th>
                     <th>Notes</th>
                 </tr>
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+                {returnHTML}
             </tbody>
         </table>
     )

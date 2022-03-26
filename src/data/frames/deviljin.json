@@ -10,9 +10,9 @@
     },
 
     {
-        "input": "2",
-        "impact": 10,
-        "damage": 12,
+        "input": "f,n,d,d/f+2",
+        "impact": 11,
+        "damage": 23,
         "hit": 8,
         "block": 1,
         "counter": 8,
@@ -20,9 +20,9 @@
     },
 
     {
-        "input": "2",
+        "input": "f,f+4",
         "impact": 10,
-        "damage": 12,
+        "damage": 25,
         "hit": 8,
         "block": 1,
         "counter": 8,
