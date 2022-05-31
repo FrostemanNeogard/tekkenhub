@@ -18,12 +18,11 @@ class App extends Component {
   	render() {
   		return (
   			<div className="App"> 
-				<nav>
-					<TopBar func={this.changeState}/>
-					<CharacterSidebar func={this.changeState}/>
-				</nav>
-
-				<div id="content">
+				<TopBar func={this.changeState}/>
+				<div className="content">
+					<nav className='main-navigation'>
+						<CharacterSidebar func={this.changeState}/>
+					</nav>
 					<RightSideContent name={this.state.charName}/>
 				</div>
   	    	</div>

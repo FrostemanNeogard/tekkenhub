@@ -29,6 +29,7 @@ function GetCharacterPanels(props) {
                 className="character-panel" 
                 key={`character-panel-${characterArray[i]}`}
                 onClick={() => {
+                    console.log('pressed')
                     props.func(characterArray[i])
                 }}
             >

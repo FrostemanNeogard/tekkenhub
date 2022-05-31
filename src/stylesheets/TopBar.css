@@ -7,15 +7,18 @@
 }
 
 .top-bar button {
+    margin-right: auto;
+    margin-left: auto;
     border: none;
-    padding: 1rem 2rem;
+    text-align: center;
     font-weight: 900;
-    border-radius: 0.2rem;
-    color: black;
-    background: white(94, 94, 94);
+    font-size: 1.5rem;
+    background-color: transparent;
+    color: white;
+    font-weight: 100;
 }
 
 .top-bar button:hover {
     cursor: pointer;
-    background-color: rgb(148, 148, 148);
+    color: rgb(203, 203, 203);
 }

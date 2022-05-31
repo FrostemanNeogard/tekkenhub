@@ -10,7 +10,7 @@ class TopBar extends Component {
                 <button
                     className='home-button'
                     onClick={() => {this.props.func('home')}}>
-                        <FontAwesomeIcon icon={faHouseChimney} /> Home
+                        Home
                 </button>
             </div>
         )

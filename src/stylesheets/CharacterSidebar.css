@@ -1,7 +1,12 @@
+/* .content .main-navigation {
+    position: relative;
+} */
+
 .character-sidebar {
+    display: grid;
+    flex-direction: column;
     width: 15rem;
     height: 100%;
-    float:left;
 }
 
 .character-panel {
@@ -70,8 +75,13 @@
         height: 3rem;
         border-radius: 1em;
         margin: 5px;
-        pointer-events: none;
         padding: 0;
+    }
+
+    .character-panel:focus {
+        z-index: 1;
+        left: 0;
+        bottom: 1rem;
     }
 
     .character-panel h2 {

@@ -1,14 +1,46 @@
 .right-side-content {
-    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
     padding: 4rem;
     padding-top: 0;
 }
 
 .right-side-content .character-guide {
-
+    height: 100%;
     background-color: rgb(59, 59, 59);
     padding: 2rem 3rem;
+}
 
+.character-topbar {
+    min-height: 7rem;
+    background-color: grey;
+    padding: 0.2rem 1rem;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+}
+
+.character-topbar h1 {
+    height: 100%;
+    font-size: 250%;
+    margin: 0;
+    margin-left: auto;
+}
+
+.character-topbar .frame-data-button {
+    border: none;
+    display: block;
+    background-color: transparent;
+    color: white;
+    margin-left: auto;
+    height: 100%;
+    font-size: 2rem;
+}
+
+.character-topbar .frame-data-button:hover {
+    cursor: pointer;
 }
 
 .character-info:not(:first-child) {
@@ -24,13 +56,19 @@
     margin-top: 0;
 }
 
-table {
+table.punishment, table.framedata {
     width: 100%;
     border-spacing: 2px 0;
 }
 
-th, td {
-    padding: 2px;
+table.punishment th, table.punishment td {
+    padding: 2px 4px;
+    width: 20%;
+}
+
+table.framedata th, table.framedata td {
+    padding: 2px 4px;
+    width: calc(100%/7);
 }
 
 tr:nth-child(odd) {
