@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import BryanFrames from '../../data/frames/bryan.json';
 import Framedata from '../components/Framedata';
+import CharacterTopbar from '../components/CharacterTopBar';
 
 class Bryan extends Component {
 
@@ -12,11 +13,14 @@ class Bryan extends Component {
 
     render() {   
 
+        // Set the name that displays in the character top bar
+        let characterName = "Bryan Fury";
+
         // Display frame data if displayFrames is set to true
         if (this.state.displayFrames) {
             return (
                 <section className="character-guide">
-                    <CharacterTopbar func={this.changeState} displayingFrames={this.state.displayFrames}/>
+                    <CharacterTopbar func={this.changeState} displayingFrames={this.state.displayFrames} characterName={characterName}/>
                     <Framedata frames={BryanFrames}/>
                 </section>
             )
@@ -25,7 +29,7 @@ class Bryan extends Component {
         // Display character guide if displayFrames is set to false
         return (
             <section className='character-guide'>
-                <CharacterTopbar func={this.changeState} displayingFrames={this.state.displayFrames}/>
+                <CharacterTopbar func={this.changeState} displayingFrames={this.state.displayFrames} characterName={characterName}/>
                 <Overview />
                 <Playstyle />
                 <Punishment />
@@ -34,36 +38,6 @@ class Bryan extends Component {
             </section>
         )   
     }
-}
-
-function CharacterTopbar(props) {
-
-    // If displayingFrames is true, return a character guide button...
-    if (props.displayingFrames) {
-        return (
-            <section className="character-topbar">
-                <button 
-                    onClick={() => {
-                        props.func(false);
-                    }}>
-                        Character Guide
-                </button>
-            </section>
-        )
-    }
-
-    // ...otherwise (if displayingFrames is false), return a frame data button
-    return (
-        <section className="character-topbar">
-            <button 
-                onClick={() => {
-                    props.func(true);
-                }}>
-                    Frame Data
-            </button>
-        </section>
-    )
-
 }
 
 function Overview() {

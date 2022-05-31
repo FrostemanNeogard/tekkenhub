@@ -29,3 +29,9 @@ body, html { padding: 0; margin: 0; } *, *::before, *::after { box-sizing: borde
 
     font-family: 'Montserrat', sans-serif;
 }
+
+.App .content {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
