@@ -2,8 +2,7 @@
     margin-left: auto;
     margin-right: auto;
     width: 80%;
-    padding: 4rem;
-    padding-top: 0;
+    padding: 0 4rem;
 }
 
 .right-side-content .character-guide {
@@ -16,31 +15,33 @@
     min-height: 7rem;
     background-color: grey;
     padding: 0.2rem 1rem;
-    display: flex;
+    display: grid;
+    grid-template-columns: 15% 70% 15%;
     align-items: center;
+    justify-content: center;
     position: sticky;
     top: 0;
 }
 
 .character-topbar h1 {
-    height: 100%;
     font-size: 250%;
     margin: 0;
     margin-left: auto;
+    margin-right: auto;
 }
 
-.character-topbar .frame-data-button {
+.character-topbar button {
     border: none;
     display: block;
     background-color: transparent;
     color: white;
-    margin-left: auto;
     height: 100%;
     font-size: 2rem;
 }
 
-.character-topbar .frame-data-button:hover {
+.character-topbar button:hover {
     cursor: pointer;
+    color: rgb(211, 211, 211);
 }
 
 .character-info:not(:first-child) {
@@ -54,6 +55,7 @@
 
 .character-info > h2 {
     margin-top: 0;
+    font-size: 200%;
 }
 
 table.punishment, table.framedata {
@@ -77,4 +79,44 @@ tr:nth-child(odd) {
 
 tr:nth-child(even) {
     background-color: rgb(105, 105, 105);
+}
+
+
+.character-info.overview {
+    overflow: hidden;
+}
+
+.character-info.overview img {
+    float: right;
+    height: 20rem;
+}
+
+.character-info.combos video {
+    width: 35%;
+}
+
+.character-info.combos .combo-notation {
+    display: flex;
+    background-color: rgb(85, 85, 85);
+    border: 2px solid rgb(255, 255, 255);
+    padding: 0.5rem;
+    align-items: center;
+    font-size: var(--combo-notation-height);
+    font-weight: 900;
+    text-transform: uppercase;
+    flex-wrap: wrap;
+    gap: 0.5rem 0;
+    margin: 0.5rem 0;
+}
+
+.character-info.combos h3 {
+    margin-bottom: 0;
+}
+
+.character-info.combos h3:not(:first-child) {
+    margin-top: 3rem; 
+}
+
+.character-info.combos .combo-notation a {
+    margin-left: 1rem;
 }

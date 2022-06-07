@@ -7,7 +7,7 @@ import { Component } from 'react';
 class App extends Component {
 
 	// Set the default loaded page
-	state = { charName: 'Bryan' };
+	state = { charName: 'home' };
 
 	// Function for changing the laoded page that gets run in the character panels as well
 	// as the home button

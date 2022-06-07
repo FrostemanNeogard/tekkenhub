@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import BryanFrames from '../../data/frames/bryan.json';
 import Framedata from '../components/Framedata';
 import CharacterTopbar from '../components/CharacterTopBar';
+import '../../stylesheets/TekkenNotation.css';
 
 class Bryan extends Component {
 
@@ -31,10 +32,12 @@ class Bryan extends Component {
             <section className='character-guide'>
                 <CharacterTopbar func={this.changeState} displayingFrames={this.state.displayFrames} characterName={characterName}/>
                 <Overview />
-                <Playstyle />
+                <TopMoves />
+                <Gameplay />
+                <Counterplay />
                 <Punishment />
                 <Combos />
-                <Counterplay />
+                <Notes />
             </section>
         )   
     }
@@ -44,16 +47,37 @@ function Overview() {
     return (
         <article className="character-info overview">
             <h2>Overview</h2>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur voluptates odit at, aperiam cumque dignissimos in vitae officiis assumenda. Doloremque laborum suscipit quaerat, nisi quibusdam quia quae ullam aperiam quas sunt! Quos assumenda autem asperiores dignissimos laudantium. Id, laboriosam obcaecati quidem sunt deserunt temporibus? Reprehenderit vero est a ratione veritatis magni sit suscipit eaque eius repellendus numquam voluptas pariatur, temporibus iste earum nulla rem nam voluptatibus dignissimos beatae, aut dicta placeat. Minus quibusdam optio iusto nemo necessitatibus. Facere eos beatae adipisci natus sequi, unde odit similique! Nisi doloribus tempore laudantium? Expedita, consequatur soluta non delectus voluptate beatae quae esse ullam.</p>
+            <img src="https://fauxjacket.com/wp-content/uploads/2021/07/bryan-fury-jacket.jpg" alt="Bryan Fury" />
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio dignissimos similique repudiandae placeat iure cupiditate sunt voluptate? At molestias obcaecati nesciunt officia. Cum nihil magni quae ipsum atque? Dolore iste magnam suscipit nisi! Minima dolorum sunt temporibus excepturi optio repudiandae cupiditate iste quas necessitatibus rem esse porro aperiam facilis qui quisquam, hic voluptatum ratione debitis nemo ipsa dolores vel? Exercitationem temporibus laboriosam cupiditate placeat aliquam consectetur, porro quaerat animi quam velit commodi quo at dicta excepturi, cum blanditiis ducimus esse eveniet eos obcaecati. Dolores, at! Minima incidunt asperiores saepe architecto adipisci illo hic! Corporis ut blanditiis facere quas sint possimus omnis dolores nisi. Minima modi nemo accusamus molestias vero perspiciatis ducimus at fuga nobis! Sequi at distinctio ipsum fuga ducimus atque culpa recusandae earum dolor hic suscipit iure nam nihil corrupti sunt nisi, necessitatibus cumque nesciunt animi? At culpa reiciendis nihil maiores enim nemo molestias nobis ratione quae molestiae placeat ipsum sint doloremque exercitationem non harum porro ipsam, autem cum, beatae, iusto totam. Molestias nam, porro cumque obcaecati libero maxime delectus beatae non asperiores perferendis in facere sed, incidunt repellendus architecto iusto fuga vel omnis ducimus? Deserunt culpa non dolorem expedita ullam dolores aliquam quo quasi quas quod! Soluta, reprehenderit.
+            </p>
         </article>
     )
 }
 
-function Playstyle() {
+function TopMoves() {
     return (
-        <section className="character-info playstyle">
-            <h2>Playstyle</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat consequatur adipisci, sit odit aspernatur ipsam dolores cum laudantium alias enim, est laboriosam doloribus corrupti labore praesentium impedit ipsum nobis natus ex distinctio et dignissimos temporibus! Quas animi, odio iste error nostrum exercitationem repellendus sapiente numquam nesciunt consectetur aperiam saepe excepturi distinctio? Fuga quisquam, ex neque ullam reiciendis corrupti doloribus asperiores, reprehenderit sapiente assumenda ducimus ratione quae laboriosam perferendis mollitia inventore odit adipisci illo culpa itaque, odio totam molestiae. Blanditiis est dolore ipsam! Animi laudantium delectus magni recusandae iusto amet. Odio odit eveniet dolores! Numquam similique deleniti fugiat error iste unde qui sit animi illum nisi corrupti nemo provident corporis fugit in voluptas, nihil id sequi maiores voluptates fuga aut hic veritatis. Repellat nisi fugiat nesciunt atque inventore dolorum a modi veniam sunt est, itaque cum, quae minima fugit voluptate ipsam nulla tempora ullam cumque eum tenetur? Temporibus commodi ipsa corporis?</p>
+        <section className="character-info top-moves">
+            <h2>Top Moves</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quisquam aspernatur exercitationem cum accusantium enim reprehenderit praesentium aliquam? Recusandae explicabo et debitis sunt veniam iste quis similique perspiciatis aliquid reprehenderit placeat minus, vel autem vitae quo amet deserunt eaque deleniti. Incidunt architecto sapiente praesentium doloremque facilis velit. Voluptas perferendis natus repudiandae distinctio laboriosam ab dolorem totam enim hic perspiciatis ipsum ipsa, amet saepe molestias porro nam doloribus architecto quasi blanditiis quo? Expedita sunt libero animi repudiandae, atque asperiores consequuntur fuga magni voluptates odio tempora dolorem rem nemo laborum nam soluta aut numquam at nisi sapiente! Vero tenetur dolores voluptatum eveniet!</p>
+        </section>
+    )
+}
+
+function Gameplay() {
+    return (
+        <section className="character-info gameplay">
+            <h2>Gameplay</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quisquam aspernatur exercitationem cum accusantium enim reprehenderit praesentium aliquam? Recusandae explicabo et debitis sunt veniam iste quis similique perspiciatis aliquid reprehenderit placeat minus, vel autem vitae quo amet deserunt eaque deleniti. Incidunt architecto sapiente praesentium doloremque facilis velit. Voluptas perferendis natus repudiandae distinctio laboriosam ab dolorem totam enim hic perspiciatis ipsum ipsa, amet saepe molestias porro nam doloribus architecto quasi blanditiis quo? Expedita sunt libero animi repudiandae, atque asperiores consequuntur fuga magni voluptates odio tempora dolorem rem nemo laborum nam soluta aut numquam at nisi sapiente! Vero tenetur dolores voluptatum eveniet!</p>
+        </section>
+    )
+}
+
+function Counterplay() {
+    return (
+        <section className="character-info counterplay">
+            <h2>Counterplay</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quisquam aspernatur exercitationem cum accusantium enim reprehenderit praesentium aliquam? Recusandae explicabo et debitis sunt veniam iste quis similique perspiciatis aliquid reprehenderit placeat minus, vel autem vitae quo amet deserunt eaque deleniti. Incidunt architecto sapiente praesentium doloremque facilis velit. Voluptas perferendis natus repudiandae distinctio laboriosam ab dolorem totam enim hic perspiciatis ipsum ipsa, amet saepe molestias porro nam doloribus architecto quasi blanditiis quo? Expedita sunt libero animi repudiandae, atque asperiores consequuntur fuga magni voluptates odio tempora dolorem rem nemo laborum nam soluta aut numquam at nisi sapiente! Vero tenetur dolores voluptatum eveniet!</p>
         </section>
     )
 }
@@ -203,15 +227,135 @@ function Combos() {
     return (
         <section className="character-info combos">
             <h2>Combos</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus accusantium beatae, neque qui omnis nisi officia provident facilis doloremque, iure sapiente. Assumenda, in! Cum aut cupiditate sed beatae, ipsam quia illum dolorum repudiandae vitae similique? Aperiam quos praesentium laboriosam delectus nostrum ipsum quasi blanditiis sed, expedita omnis aut est unde?</p>
+
+            <article>
+
+                <h3><a target="_blank" rel="noreferrer" href="https://gfycat.com/IncompatibleSlimyDuiker.gif">Jet Upper Combos (f,b+2)</a></h3>
+                <p className='combo-notation combo'>
+                    <span className='tn tn-f'>f,</span>
+                    <span className='tn tn-b'>b+</span>
+                    <span className='tn tn-2'>2</span>
+                    <span className="tn tn-next"></span>
+                    <span className='tn tn-f'>f+</span>
+                    <span className='tn tn-12'>1+2</span>
+                    <span className='tn tn-next'></span>
+                    <span className="tn tn-1">1</span>
+                    <span className='tn tn-next'></span>
+                    <span className="tn tn-b">b+</span>
+                    <span className="tn tn-2">2</span>
+                    <span className="tn tn-1">1</span>
+                    <span className="tn tn-4">4</span>
+                    <span className='tn tn-next'></span>
+                    S!<span className='tn tn-next'></span>
+                    <span className="tn tn-b">b+</span>
+                    <span className="tn tn-3">3~</span>
+                    <span className="tn tn-f">f+</span>
+                    <span className="tn tn-2">2</span>
+                    <span className="tn tn-1">1</span>
+                    <span className='tn tn-next'></span>
+                    <span className="tn tn-b">b+</span>
+                    <span className="tn tn-3">3~</span>
+                    <span className="tn tn-f">f+</span>
+                    <span className="tn tn-2">2</span>
+                    <span className="tn tn-1">1</span>
+                    <span className='tn tn-next'></span>
+                    <span className="tn tn-b">B+</span>
+                    <span className="tn tn-3">3~</span>
+                    <span className="tn tn-f">f+</span>
+                    <span className="tn tn-2">2</span>
+                    <span className="tn tn-1">1</span>
+                    <a target="_blank" rel="noreferrer" href="https://gfycat.com/IncompatibleSlimyDuiker.gif">Video</a>
+                </p>
+                <p className='combo-notation combo'>
+                    <span className='tn tn-f'>f,</span>
+                    <span className='tn tn-b'>b+</span>
+                    <span className='tn tn-2'>2</span>
+                    <span className="tn tn-next"></span>
+                    <span className='tn tn-f'>f,</span>
+                    <span className='tn tn-fp'>f+</span>
+                    <span className='tn tn-4'>4</span>
+                    <span className='tn tn-next'></span>
+                    S!<span className='tn tn-next'></span>
+                    <span className='tn tn-b'>b+</span>
+                    <span className='tn tn-3'>3~</span>
+                    <span className='tn tn-f'>f+</span>
+                    <span className='tn tn-2'>2</span>
+                    <span className='tn tn-1'>1</span>
+                    <span className='tn tn-next'></span>
+                    <span className='tn tn-f'>f,</span>
+                    <span className='tn tn-fp'>f+</span>
+                    <span className='tn tn-2'>2</span>
+                    <a target="_blank" rel="noreferrer" href="https://gfycat.com/IncompatibleSlimyDuiker.gif">Video</a>
+                </p>
+
+                <h3><a target="_blank" rel="noreferrer" href="https://gfycat.com/IncompatibleSlimyDuiker.gif">Snake Edge Combos (d/f+3)</a></h3>
+                <p className='combo-notation combo'>
+                    <span className='tn tn-f'>f,</span>
+                    <span className='tn tn-b'>b+</span>
+                    <span className='tn tn-2'>2</span>
+                    <span className="tn tn-next"></span>
+                    <span className='tn tn-f'>f+</span>
+                    <span className='tn tn-12'>1+2</span>
+                    <span className='tn tn-next'></span>
+                    <span className="tn tn-1">1</span>
+                    <span className='tn tn-next'></span>
+                    <span className="tn tn-b">b+</span>
+                    <span className="tn tn-2">2</span>
+                    <span className="tn tn-1">1</span>
+                    <span className="tn tn-4">4</span>
+                    <span className='tn tn-next'></span>
+                    S!<span className='tn tn-next'></span>
+                    <span className="tn tn-b">b+</span>
+                    <span className="tn tn-3">3~</span>
+                    <span className="tn tn-f">f+</span>
+                    <span className="tn tn-2">2</span>
+                    <span className="tn tn-1">1</span>
+                    <span className='tn tn-next'></span>
+                    <span className="tn tn-b">b+</span>
+                    <span className="tn tn-3">3~</span>
+                    <span className="tn tn-f">f+</span>
+                    <span className="tn tn-2">2</span>
+                    <span className="tn tn-1">1</span>
+                    <span className='tn tn-next'></span>
+                    <span className="tn tn-b">B+</span>
+                    <span className="tn tn-3">3~</span>
+                    <span className="tn tn-f">f+</span>
+                    <span className="tn tn-2">2</span>
+                    <span className="tn tn-1">1</span>
+                    <a target="_blank" rel="noreferrer" href="https://gfycat.com/IncompatibleSlimyDuiker.gif">Video</a>
+                </p>
+                <p className='combo-notation combo'>
+                    <span className='tn tn-f'>f,</span>
+                    <span className='tn tn-b'>b+</span>
+                    <span className='tn tn-2'>2</span>
+                    <span className="tn tn-next"></span>
+                    <span className='tn tn-f'>f,</span>
+                    <span className='tn tn-fp'>f+</span>
+                    <span className='tn tn-4'>4</span>
+                    <span className='tn tn-next'></span>
+                    S!<span className='tn tn-next'></span>
+                    <span className='tn tn-b'>b+</span>
+                    <span className='tn tn-3'>3~</span>
+                    <span className='tn tn-f'>f+</span>
+                    <span className='tn tn-2'>2</span>
+                    <span className='tn tn-1'>1</span>
+                    <span className='tn tn-next'></span>
+                    <span className='tn tn-f'>f,</span>
+                    <span className='tn tn-fp'>f+</span>
+                    <span className='tn tn-2'>2</span>
+                    <a target="_blank" rel="noreferrer" href="https://gfycat.com/IncompatibleSlimyDuiker.gif">Video</a>
+                </p>
+
+            </article>
+
         </section>
     )
 }
 
-function Counterplay() {
+function Notes() {
     return (
-        <section className="character-info counterplay">
-            <h2>Counterplay</h2>
+        <section className="character-info notes">
+            <h2>Other Notes</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quisquam aspernatur exercitationem cum accusantium enim reprehenderit praesentium aliquam? Recusandae explicabo et debitis sunt veniam iste quis similique perspiciatis aliquid reprehenderit placeat minus, vel autem vitae quo amet deserunt eaque deleniti. Incidunt architecto sapiente praesentium doloremque facilis velit. Voluptas perferendis natus repudiandae distinctio laboriosam ab dolorem totam enim hic perspiciatis ipsum ipsa, amet saepe molestias porro nam doloribus architecto quasi blanditiis quo? Expedita sunt libero animi repudiandae, atque asperiores consequuntur fuga magni voluptates odio tempora dolorem rem nemo laborum nam soluta aut numquam at nisi sapiente! Vero tenetur dolores voluptatum eveniet!</p>
         </section>
     )

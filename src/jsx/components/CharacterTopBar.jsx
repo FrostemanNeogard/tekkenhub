@@ -1,30 +1,29 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowsRotate } from '@fortawesome/free-solid-svg-icons'
+import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
 
 export default function CharacterTopbar(props) {
 
-    // If displayingFrames is true, return a character guide button...
-    if (props.displayingFrames) {
-        return (
-            <section className="character-topbar">
-                <h1>Byran Fury</h1>
-                <button className='frame-data-button'
-                    onClick={() => {
-                        props.func(false);
-                    }}>
-                        <FontAwesomeIcon icon={faArrowsRotate} />
-                </button>
-            </section>
-        )
-    }
+    // Props include a function to change state on the character page, the state itself, as well as the character name
 
-    // ...otherwise (if displayingFrames is false), return a frame data button
+    // Create the navbar at the top of the character pages
     return (
         <section className="character-topbar">
-            <h1>Byran Fury</h1>
-            <button className='frame-data-button'
+            {/* Scroll to top button */}
+            <button
+                onClick={() => window.scrollTo(0, 0)}>
+                    <FontAwesomeIcon icon={faArrowUp} />
+            </button>
+
+            {/* Character name */}
+            <h1>{props.characterName}</h1>
+
+            {/* Frame data/character guide button */}
+            <button
                 onClick={() => {
-                    props.func(true);
+                    // If frames are currently displaying, have the button show character guide on click
+                    // Otherwise, have the button show frame data on click
+                    props.func(!props.displayingFrames);
                 }}>
                     <FontAwesomeIcon icon={faArrowsRotate} />
             </button>
