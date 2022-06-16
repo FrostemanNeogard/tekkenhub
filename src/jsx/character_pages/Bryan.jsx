@@ -224,6 +224,9 @@ function Punishment() {
 }
 
 function Combos() {
+
+
+    // TODO: Have this combo section be generated from data in a JSON file
     return (
         <section className="character-info combos">
             <h2>Combos</h2>
