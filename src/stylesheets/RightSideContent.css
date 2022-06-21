@@ -3,6 +3,7 @@
     margin-right: auto;
     width: 80%;
     padding: 0 4rem;
+    filter: drop-shadow(0 0 1rem black);
 }
 
 .right-side-content .character-guide {
@@ -14,6 +15,7 @@
 .character-topbar {
     min-height: 7rem;
     background-color: grey;
+    margin: 0 -0.5rem;
     padding: 0.2rem 1rem;
     display: grid;
     grid-template-columns: 15% 70% 15%;
@@ -21,6 +23,7 @@
     justify-content: center;
     position: sticky;
     top: 0;
+    border: 2px solid black;
 }
 
 .character-topbar h1 {

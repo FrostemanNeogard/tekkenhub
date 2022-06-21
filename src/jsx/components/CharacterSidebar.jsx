@@ -24,17 +24,24 @@ function GetCharacterPanels(props) {
 
     // For each character, create a character-panel article for them
     for (let i = 0; i < characterArray.length; i++) {
+        let characterName = characterArray[i];
+        let WIP = false;
+        if (characterArray[i].startsWith('-')) {
+            WIP = true;
+            characterName = characterName.substring(1);
+        }
+
         returnHTML.push (
             <article 
-                className="character-panel" 
-                key={`character-panel-${characterArray[i]}`}
+                className={`character-panel ${WIP ? "work-in-progress" : ""}`}
+                key={`character-panel-${characterName}`}
                 onClick={() => {
                     console.log('pressed')
-                    props.func(characterArray[i])
+                    props.func(characterName)
                 }}
             >
-                <img src={characterImages[i]} alt={characterArray[i]} />
-                <h2>{characterArray[i]}</h2>
+                <img src={characterImages[i]} alt={characterName} />
+                <h2>{characterName}</h2>
             </article>
         )
     }
@@ -45,58 +52,59 @@ function GetCharacterPanels(props) {
 
 // (currently temporary) function to get the names of all characters
 // which is used in the creation of their panels in the sidebar
+// If name starts with "-", it is work in progress.
 function GetCharacters() {
     return [
-        'Akuma',
-        'Alisa',
-        'Anna',
-        'Armor King',
-        'Asuka',
-        'Bob',
+        '-Akuma',
+        '-Alisa',
+        '-Anna',
+        '-Armor King',
+        '-Asuka',
+        '-Bob',
         'Bryan',
-        'Claudio',
-        'Devil Jin',
-        'Dragunov',
-        'Eddy',
-        'Eliza',
-        'Fahkumram',
-        'Feng',
-        'Ganryu',
-        'Geese',
-        'Gigas',
-        'Heihachi',
-        'Hwoarang',
-        'Jack-7',
-        'Jin',
-        'Josie',
-        'Julia',
-        'Katarina',
-        'Kazumi',
-        'Kazuya',
-        'King',
-        'Kuma/Panda',
-        'Kunimitsu',
-        'Lars',
-        'Law',
-        'Lee',
-        'Lei',
-        'Leo',
-        'Leroy',
-        'Lidia',
-        'Lili',
-        'Lucky Chloe',
-        'Marduk',
-        'Master Raven',
-        'Miguel',
-        'Negan',
-        'Nina',
-        'Noctis',
-        'Paul',
-        'Shaheen',
-        'Steve',
-        'Xiaoyu',
-        'Yoshimitsu',
-        'Zafina'
+        '-Claudio',
+        '-Devil Jin',
+        '-Dragunov',
+        '-Eddy',
+        '-Eliza',
+        '-Fahkumram',
+        '-Feng',
+        '-Ganryu',
+        '-Geese',
+        '-Gigas',
+        '-Heihachi',
+        '-Hwoarang',
+        '-Jack-7',
+        '-Jin',
+        '-Josie',
+        '-Julia',
+        '-Katarina',
+        '-Kazumi',
+        '-Kazuya',
+        '-King',
+        '-Kuma/Panda',
+        '-Kunimitsu',
+        '-Lars',
+        '-Law',
+        '-Lee',
+        '-Lei',
+        '-Leo',
+        '-Leroy',
+        '-Lidia',
+        '-Lili',
+        '-Lucky Chloe',
+        '-Marduk',
+        '-Master Raven',
+        '-Miguel',
+        '-Negan',
+        '-Nina',
+        '-Noctis',
+        '-Paul',
+        '-Shaheen',
+        '-Steve',
+        '-Xiaoyu',
+        '-Yoshimitsu',
+        '-Zafina'
     ]
 }
 

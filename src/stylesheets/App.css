@@ -13,16 +13,20 @@ body, html { padding: 0; margin: 0; } *, *::before, *::after { box-sizing: borde
     --secondary-text-color: black;
 
     --character-panel-bg-color: black;
-    --character-panel-bg-color-hover: rgb(53, 53, 53);
+    --character-panel-bg-color-hover: rgb(51, 51, 51);
+    --character-panel-border-radius: 1rem;
 
-    --combo-notation-height: 2rem;
+    --combo-notation-height: 1.75rem;
 }
 
 /* Actual content */
 .App {
     width: 100%;
     min-height: 100vh;
-
+    
+	background: linear-gradient(-85deg, #a74444, #ab7839, #a09c34, #3ba548, #509ccc, rgb(135, 25, 157), rgb(202, 79, 202));
+	background-size: 1400% 200%;
+	animation: gradient 60s ease-in-out infinite;
     background-color: var(--primary-bg-color);
     color: var(--primary-text-color);
 
@@ -44,4 +48,17 @@ a {
 
 a:hover {
     color:rgb(123, 182, 182);
+}
+
+/* Moving background gradient */
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
