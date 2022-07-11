@@ -1,6 +1,6 @@
-function Framedata(props) {
+export default function Framedata(props) {
 
-    let frameData = JSON.parse(JSON.stringify(props.frames));
+    let frameData = JSON.parse(JSON.stringify(props.data));
 
     let returnHTML = [];
 
@@ -35,5 +35,3 @@ function Framedata(props) {
         </table>
     )
 }
-
-export default Framedata;

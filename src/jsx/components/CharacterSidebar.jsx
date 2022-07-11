@@ -36,7 +36,7 @@ function GetCharacterPanels(props) {
                 className={`character-panel ${WIP ? "work-in-progress" : ""}`}
                 key={`character-panel-${characterName}`}
                 onClick={() => {
-                    console.log('pressed')
+                    window.scrollTo(0, 0)
                     props.func(characterName)
                 }}
             >

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import BryanFrames from '../../data/frames/bryan.json';
+import BryanCombos from '../../data/combos/bryan.json';
 import Framedata from '../components/Framedata';
+import ComboSection from '../components/ComboSection';
 import CharacterTopbar from '../components/CharacterTopBar';
 import '../../stylesheets/TekkenNotation.css';
 
@@ -22,7 +24,7 @@ class Bryan extends Component {
             return (
                 <section className="character-guide">
                     <CharacterTopbar func={this.changeState} displayingFrames={this.state.displayFrames} characterName={characterName}/>
-                    <Framedata frames={BryanFrames}/>
+                    <Framedata data={BryanFrames}/>
                 </section>
             )
         }
@@ -231,6 +233,8 @@ function Combos() {
         <section className="character-info combos">
             <h2>Combos</h2>
 
+            <ComboSection data={BryanCombos}/>
+
             <article>
 
                 <h3><a target="_blank" rel="noreferrer" href="https://gfycat.com/IncompatibleSlimyDuiker.gif">Jet Upper Combos (f,b+2)</a></h3>
@@ -269,87 +273,8 @@ function Combos() {
                     <span className="tn tn-1">1</span>
                     <a target="_blank" rel="noreferrer" href="https://gfycat.com/IncompatibleSlimyDuiker.gif">Video</a>
                 </p>
-                <p className='combo-notation combo'>
-                    <span className='tn tn-f'>f,</span>
-                    <span className='tn tn-b'>b+</span>
-                    <span className='tn tn-2'>2</span>
-                    <span className="tn tn-next"></span>
-                    <span className='tn tn-f'>f,</span>
-                    <span className='tn tn-fp'>f+</span>
-                    <span className='tn tn-4'>4</span>
-                    <span className='tn tn-next'></span>
-                    S!<span className='tn tn-next'></span>
-                    <span className='tn tn-b'>b+</span>
-                    <span className='tn tn-3'>3~</span>
-                    <span className='tn tn-f'>f+</span>
-                    <span className='tn tn-2'>2</span>
-                    <span className='tn tn-1'>1</span>
-                    <span className='tn tn-next'></span>
-                    <span className='tn tn-f'>f,</span>
-                    <span className='tn tn-fp'>f+</span>
-                    <span className='tn tn-2'>2</span>
-                    <a target="_blank" rel="noreferrer" href="https://gfycat.com/IncompatibleSlimyDuiker.gif">Video</a>
-                </p>
-
-                <h3><a target="_blank" rel="noreferrer" href="https://gfycat.com/IncompatibleSlimyDuiker.gif">Snake Edge Combos (d/f+3)</a></h3>
-                <p className='combo-notation combo'>
-                    <span className='tn tn-f'>f,</span>
-                    <span className='tn tn-b'>b+</span>
-                    <span className='tn tn-2'>2</span>
-                    <span className="tn tn-next"></span>
-                    <span className='tn tn-f'>f+</span>
-                    <span className='tn tn-12'>1+2</span>
-                    <span className='tn tn-next'></span>
-                    <span className="tn tn-1">1</span>
-                    <span className='tn tn-next'></span>
-                    <span className="tn tn-b">b+</span>
-                    <span className="tn tn-2">2</span>
-                    <span className="tn tn-1">1</span>
-                    <span className="tn tn-4">4</span>
-                    <span className='tn tn-next'></span>
-                    S!<span className='tn tn-next'></span>
-                    <span className="tn tn-b">b+</span>
-                    <span className="tn tn-3">3~</span>
-                    <span className="tn tn-f">f+</span>
-                    <span className="tn tn-2">2</span>
-                    <span className="tn tn-1">1</span>
-                    <span className='tn tn-next'></span>
-                    <span className="tn tn-b">b+</span>
-                    <span className="tn tn-3">3~</span>
-                    <span className="tn tn-f">f+</span>
-                    <span className="tn tn-2">2</span>
-                    <span className="tn tn-1">1</span>
-                    <span className='tn tn-next'></span>
-                    <span className="tn tn-b">B+</span>
-                    <span className="tn tn-3">3~</span>
-                    <span className="tn tn-f">f+</span>
-                    <span className="tn tn-2">2</span>
-                    <span className="tn tn-1">1</span>
-                    <a target="_blank" rel="noreferrer" href="https://gfycat.com/IncompatibleSlimyDuiker.gif">Video</a>
-                </p>
-                <p className='combo-notation combo'>
-                    <span className='tn tn-f'>f,</span>
-                    <span className='tn tn-b'>b+</span>
-                    <span className='tn tn-2'>2</span>
-                    <span className="tn tn-next"></span>
-                    <span className='tn tn-f'>f,</span>
-                    <span className='tn tn-fp'>f+</span>
-                    <span className='tn tn-4'>4</span>
-                    <span className='tn tn-next'></span>
-                    S!<span className='tn tn-next'></span>
-                    <span className='tn tn-b'>b+</span>
-                    <span className='tn tn-3'>3~</span>
-                    <span className='tn tn-f'>f+</span>
-                    <span className='tn tn-2'>2</span>
-                    <span className='tn tn-1'>1</span>
-                    <span className='tn tn-next'></span>
-                    <span className='tn tn-f'>f,</span>
-                    <span className='tn tn-fp'>f+</span>
-                    <span className='tn tn-2'>2</span>
-                    <a target="_blank" rel="noreferrer" href="https://gfycat.com/IncompatibleSlimyDuiker.gif">Video</a>
-                </p>
-
             </article>
+
 
         </section>
     )

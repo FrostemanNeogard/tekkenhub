@@ -1,9 +1,15 @@
-{
-    "f,b+2": {
-        "combo": {
-            "damage": 70,
-            "notation": "f+1+2, b+2,4 S!, b+3~f+2,1",
-            "notes": ""
-        }
+[
+    {
+        "launcher": "f,b+2",
+        "damage": 70,
+        "notation": "f+1+2, b+2,4 S!, b+3~f+2,1",
+        "notes": ""
+    },
+
+    {
+        "launcher": "d/f+3",
+        "damage": 70,
+        "notation": "f+1+2, b+2,4 S!, b+3~f+2,1",
+        "notes": ""
     }
-}
+]
