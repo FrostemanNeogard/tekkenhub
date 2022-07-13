@@ -50,6 +50,15 @@ a:hover {
     color:rgb(123, 182, 182);
 }
 
+/* Scrollbar */
+::-webkit-scrollbar {
+    background: rgb(51, 51, 51);
+}
+::-webkit-scrollbar-thumb {
+    background: grey;
+    height: 2rem;
+}
+
 /* Moving background gradient */
 @keyframes gradient {
 	0% {
