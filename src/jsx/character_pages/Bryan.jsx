@@ -226,56 +226,11 @@ function Punishment() {
 }
 
 function Combos() {
-
-
-    // TODO: Have this combo section be generated from data in a JSON file
+    // Render combos from the proper JSON file
     return (
         <section className="character-info combos">
             <h2>Combos</h2>
-
             <ComboSection data={BryanCombos}/>
-
-            <article>
-
-                <h3><a target="_blank" rel="noreferrer" href="https://gfycat.com/IncompatibleSlimyDuiker.gif">Jet Upper Combos (f,b+2)</a></h3>
-                <p className='combo-notation combo'>
-                    <span className='tn tn-f'>f,</span>
-                    <span className='tn tn-b'>b+</span>
-                    <span className='tn tn-2'>2</span>
-                    <span className="tn tn-next"></span>
-                    <span className='tn tn-f'>f+</span>
-                    <span className='tn tn-12'>1+2</span>
-                    <span className='tn tn-next'></span>
-                    <span className="tn tn-1">1</span>
-                    <span className='tn tn-next'></span>
-                    <span className="tn tn-b">b+</span>
-                    <span className="tn tn-2">2</span>
-                    <span className="tn tn-1">1</span>
-                    <span className="tn tn-4">4</span>
-                    <span className='tn tn-next'></span>
-                    S!<span className='tn tn-next'></span>
-                    <span className="tn tn-b">b+</span>
-                    <span className="tn tn-3">3~</span>
-                    <span className="tn tn-f">f+</span>
-                    <span className="tn tn-2">2</span>
-                    <span className="tn tn-1">1</span>
-                    <span className='tn tn-next'></span>
-                    <span className="tn tn-b">b+</span>
-                    <span className="tn tn-3">3~</span>
-                    <span className="tn tn-f">f+</span>
-                    <span className="tn tn-2">2</span>
-                    <span className="tn tn-1">1</span>
-                    <span className='tn tn-next'></span>
-                    <span className="tn tn-b">B+</span>
-                    <span className="tn tn-3">3~</span>
-                    <span className="tn tn-f">f+</span>
-                    <span className="tn tn-2">2</span>
-                    <span className="tn tn-1">1</span>
-                    <a target="_blank" rel="noreferrer" href="https://gfycat.com/IncompatibleSlimyDuiker.gif">Video</a>
-                </p>
-            </article>
-
-
         </section>
     )
 }

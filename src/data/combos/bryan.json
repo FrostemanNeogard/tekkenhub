@@ -1,15 +1,46 @@
 [
     {
-        "launcher": "f,b+2",
-        "damage": 70,
-        "notation": "f+1+2, b+2,4 S!, b+3~f+2,1",
-        "notes": ""
+        "launcherName": "Jet Upper",
+        "launcherNotation": "f,b+2",
+        "launcherDemo": "https://gfycat.com/IncompatibleSlimyDuiker.gif",
+        "routes": [
+            {
+                "damage": 70,
+                "formattedNotation": "f,b,2,next,f,12,next,1,next,b,2,1,4,next,screw,next,b,3,f,2,1",
+                "displayedNotation": "f,b+2, f+1+2, b+2,4 S!, b+3~f+2,1",
+                "notes": "",
+                "demo": "https://gfycat.com/IncompatibleSlimyDuiker.gif"
+            },
+
+            {
+                "damage": 3,
+                "formattedNotation": "f,b,2,next,f,12,next,b,2,4,next,screw,next,b,3,f,2,1",
+                "displayedNotation": "f,b+2, f+1+2, b+2,4 S!, b+3~f+2,1",
+                "notes": "",
+                "demo": ""
+            }
+        ]
     },
 
     {
-        "launcher": "d/f+3",
-        "damage": 70,
-        "notation": "f+1+2, b+2,4 S!, b+3~f+2,1",
-        "notes": ""
+        "launcherName": "Snake Edge",
+        "launcherNotation": "d/f+3",
+        "launcherDemo": "https://gfycat.com/IncompatibleSlimyDuiker.gif",
+        "routes": [
+            {
+                "damage": 70,
+                "formattedNotation": "df,3,next,f,fp,3,hold,next,screw,next,uf,3,next,2,next,b,3,f,2,1",
+                "displayedNotation": "f,f+3* S!, u/f+3, 2, b+3~f+2,1",
+                "notes": "",
+                "demo": ""
+            },
+            {
+                "damage": 70,
+                "formattedNotation": "df,3,next,ws,3,4,next,4,3,4,next,b,3,f,2,1",
+                "displayedNotation": "f,f+3* S!, u/f+3, 2, b+3~f+2,1",
+                "notes": "",
+                "demo": ""
+            }
+        ]
     }
 ]
