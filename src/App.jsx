@@ -3,6 +3,7 @@ import CharacterSidebar from './jsx/components/CharacterSidebar';
 import TopBar from './jsx/components/TopBar';
 import RightSideContent from './jsx/components/RightSideContent';
 import { Component } from 'react';
+import PopUp from './jsx/components/PopUp';
 
 class App extends Component {
 
@@ -17,7 +18,8 @@ class App extends Component {
 
   	render() {
   		return (
-  			<div className="App"> 
+  			<div className="App">
+				<PopUp />
 				<TopBar func={this.changeState}/>
 				<div className="content">
 					<nav className='main-navigation'>

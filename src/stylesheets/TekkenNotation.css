@@ -7,7 +7,7 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    font-size: 1.5rem;
+    font-size: calc(var(--combo-notation-height) * 0.8);
     text-transform: none;
 }
 
@@ -151,12 +151,12 @@
 
 .tn-next {
     background-image: url('../images/notation/miscallaneous/next.svg');
-    background-size: 1.5rem;
+    background-size: 80%;
     margin: 0 1%;
 }
 
 /* Text Notation */
-.tn-screw, .tn-ws, .tn-wr, .tn-fc, .tn-hold {
+.tn-screw, .tn-ws, .tn-wr, .tn-fc, .tn-hold, .tn-dash {
     color: white;
     width:fit-content;
     margin: 0.2rem;
@@ -180,4 +180,8 @@
 
 .tn-hold::before {
     content: "(HOLD)";
+}
+
+.tn-dash::before {
+    content: "DASH";
 }

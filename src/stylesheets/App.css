@@ -16,7 +16,7 @@ body, html { padding: 0; margin: 0; } *, *::before, *::after { box-sizing: borde
     --character-panel-bg-color-hover: rgb(51, 51, 51);
     --character-panel-border-radius: 1rem;
 
-    --combo-notation-height: 1.75rem;
+    --combo-notation-height: 2rem;
 }
 
 /* Actual content */
@@ -44,6 +44,8 @@ body, html { padding: 0; margin: 0; } *, *::before, *::after { box-sizing: borde
 
 a {
     color: rgb(166, 255, 255);
+    height: 0;
+    width: 0;
 }
 
 a:hover {

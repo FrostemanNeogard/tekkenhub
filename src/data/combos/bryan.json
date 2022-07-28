@@ -7,15 +7,15 @@
             {
                 "damage": 70,
                 "formattedNotation": "f,b,2,next,f,12,next,1,next,b,2,1,4,next,screw,next,b,3,f,2,1",
-                "displayedNotation": "f,b+2, f+1+2, b+2,4 S!, b+3~f+2,1",
+                "displayedNotation": "f,b+2 f+1+2 1 b+2,1,4 S! b+3~f+2,1",
                 "notes": "",
                 "demo": "https://gfycat.com/IncompatibleSlimyDuiker.gif"
             },
 
             {
                 "damage": 3,
-                "formattedNotation": "f,b,2,next,f,12,next,b,2,4,next,screw,next,b,3,f,2,1",
-                "displayedNotation": "f,b+2, f+1+2, b+2,4 S!, b+3~f+2,1",
+                "formattedNotation": "f,b,2,next,dash,next,d,df,f,3,4,next,b,2,4,next,screw,next,b,3,f,2,1",
+                "displayedNotation": "f,b+2 dash qcf+3,4 b+2,4 S! b+3~f+2,1",
                 "notes": "",
                 "demo": ""
             }
