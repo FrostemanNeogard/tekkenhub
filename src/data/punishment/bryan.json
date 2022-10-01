@@ -1,0 +1,87 @@
+{
+    "standing": [
+        {
+            "impact": "10",
+            "input": "1,4",
+            "damage": "21",
+            "hit": "+4",
+            "notes": ""
+        },
+
+        {
+            "impact": "10",
+            "input": "2,3",
+            "damage": "24",
+            "hit": "+6",
+            "notes": "Shorter range than 1,4"
+        },
+
+        {
+            "impact": "12",
+            "input": "4,3",
+            "damage": "27",
+            "hit": "+2",
+            "notes": ""
+        },
+
+        {
+            "impact": "13",
+            "input": "d/f+2,1",
+            "damage": "23",
+            "hit": "+8",
+            "notes": ""
+        },
+
+        {
+            "impact": "14",
+            "input": "f,b+2",
+            "damage": "20",
+            "hit": "Launch",
+            "notes": ""
+        },
+
+        {
+            "impact": "14",
+            "input": "f,F+2",
+            "damage": "32",
+            "hit": "KND",
+            "notes": "Long range, hard"
+        },
+
+        {
+            "impact": "18",
+            "input": "f+4,1",
+            "damage": "20",
+            "hit": "Launch",
+            "notes": "Long range"
+        }
+
+    ],
+
+    "crouching": [
+        {
+            "impact": "10",
+            "input": "FC+1",
+            "damage": "5",
+            "hit": "+6",
+            "notes": "Generic"
+        },
+
+        {
+            "impact": "11",
+            "input": "WS+4",
+            "damage": "16",
+            "hit": "+5",
+            "notes": ""
+        },
+
+        {
+            "impact": "12",
+            "input": "WS+3",
+            "damage": "18",
+            "hit": "+4",
+            "notes": ""
+        }
+    ]
+
+}

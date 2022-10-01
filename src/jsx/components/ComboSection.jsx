@@ -88,7 +88,7 @@ class ComboSection extends Component {
                             <p>
                                 DAMAGE: {comboData[i].routes[x].damage}
                                 <br />
-                                WALLCARY: GOOD
+                                NOTES: {comboData[i].routes[x].notes}
                             </p>
                         </div>
                     </section>
