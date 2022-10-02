@@ -24,6 +24,7 @@
     position: sticky;
     top: 0;
     border: 2px solid black;
+    filter: drop-shadow(0 0 0.5rem black);
 }
 
 .character-topbar h1 {
@@ -69,6 +70,10 @@ table.punishment, table.framedata {
 table.punishment th, table.punishment td {
     padding: 2px 4px;
     width: 20%;
+}
+
+table.framedata {
+    margin-top: 2rem;
 }
 
 table.framedata th, table.framedata td {

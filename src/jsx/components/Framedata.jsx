@@ -11,6 +11,7 @@ export default function Framedata(props) {
                 <td>{frameData[i].impact}</td>
                 <td>{frameData[i].damage}</td>
                 <td>{frameData[i].hit}</td>
+                <td>{frameData[i].block}</td>
                 <td>{frameData[i].counter}</td>
                 <td>{frameData[i].notes}</td>
             </tr>

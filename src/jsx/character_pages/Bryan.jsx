@@ -19,7 +19,7 @@ class Bryan extends Component {
     render() {   
 
         // Set the name that displays in the character top bar
-        let characterName = CharacterInformation.overview.name;
+        let characterName = CharacterInformation[0].name;
 
         // Display frame data if displayFrames is set to true
         if (this.state.displayFrames) {
@@ -35,52 +35,40 @@ class Bryan extends Component {
         return (
             <section className='character-guide'>
                 <CharacterTopbar func={this.changeState} displayingFrames={this.state.displayFrames} characterName={characterName}/>
-                <Overview />
-                <TopMoves />
-                <Gameplay />
-                <Counterplay />
-                <Punishment />
-                <Combos />
-                <Notes />
+                <GenerateHeaders />
             </section>
         )   
     }
 }
 
-function Overview() {
-    return (
-        <article className="character-info overview">
-            <h2>Overview</h2>
-            <img src={CharacterInformation.overview.image} alt={CharacterInformation.overview.name} />
-            <p>{CharacterInformation.overview.data}</p>
-        </article>
-    )
-}
+function GenerateHeaders() {
+    let returnHTML = [];
+    for (let i = 0; i < CharacterInformation.length; i++) {
+        if (CharacterInformation[i].header === "Overview") continue;
+        if (!CharacterInformation[i].header) console.log(`ERROR: No header for ${this.characterName} detected at: ${CharacterInformation[i]}`)
 
-function TopMoves() {
-    return (
-        <section className="character-info top-moves">
-            <h2>Top Moves</h2>
-            <p>{CharacterInformation.topMoves.data}</p>
-        </section>
-    )
-}
+        if (i === 4) {
+            returnHTML.push(<Punishment key={`character-info-${i}-punishment`}/>)
+            returnHTML.push(<Combos key={`character-info-${i}-combos`}/>);
+        }
 
-function Gameplay() {
-    return (
-        <section className="character-info gameplay">
-            <h2>Gameplay</h2>
-            <p>{CharacterInformation.gameplay.data}</p>
-        </section>
-    )
-}
+        returnHTML.push(
+            <article className="character-info" key={`character-info-${i}`}>
+                <h2>{CharacterInformation[i].header}</h2>
+                <p>{CharacterInformation[i].data}</p>
+            </article>
+        )
+    }
 
-function Counterplay() {
-    return (
-        <section className="character-info counterplay">
-            <h2>Counterplay</h2>
-            <p>{CharacterInformation.counterplay.data}</p>
-        </section>
+    return(
+        <>
+            <article className='character-info overview'>
+                <h2>Overview</h2>
+                <img src={CharacterInformation[0].image} alt={CharacterInformation[0].name} />
+                <p>{CharacterInformation[0].data}</p>
+            </article>
+            {returnHTML}
+        </>
     )
 }
 
@@ -154,15 +142,6 @@ function Combos() {
         <section className="character-info combos">
             <h2>Combos</h2>
             <ComboSection data={CharacterCombos}/>
-        </section>
-    )
-}
-
-function Notes() {
-    return (
-        <section className="character-info notes">
-            <h2>Other Notes</h2>
-            <p>{CharacterInformation.otherNotes.data}</p>
         </section>
     )
 }

@@ -42,7 +42,7 @@ class ComboSection extends Component {
             for (let x = 0; x < comboData[i].routes.length; x++) {
                 // Format the combo notation to give the proper 
                 // CSS classes to the displayed notation
-                let seperatedNotation = comboData[i].routes[x].formattedNotation.split(',');
+                let seperatedNotation = comboData[i].routes[x].graphicalNotation.split(',');
                 let currentComboNotation = [];
                 for (let y = 0; y < seperatedNotation.length; y++) {
                     currentComboNotation.push(
@@ -73,7 +73,7 @@ class ComboSection extends Component {
                                     </button>
                                 </a>
                                 <CopyToClipboard 
-                                    text={comboData[i].routes[x].displayedNotation}
+                                    text={comboData[i].routes[x].textNotation}
                                     onCopy={() => 
                                         this.setState({ copied: true })}
                                 >

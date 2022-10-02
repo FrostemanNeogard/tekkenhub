@@ -18,11 +18,11 @@ class HomePage extends Component {
                     on <a href='https://github.com/FrostemanNeogard/tekkenwebsitev2' target='_blank' rel='noreferrer'>GitHub</a>.
                 </p>
 
-                <p>
+                {/* <p>
                     The frame data on this site has been taken 
                     from <a href="https://geppopotamus.info/game/tekken7fr/index_en.htm" target="_blank" rel="noreferrer">Geppopotamus</a> and
                      all credit goes to them.
-                </p>
+                </p> */}
 
             </section>
 
