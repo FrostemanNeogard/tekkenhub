@@ -8,7 +8,7 @@ import $ from 'jquery';
 class ComboSection extends Component {
 
     state = {
-        value: 'hello',
+        value: '',
         copied: false,
     };
 
@@ -24,15 +24,10 @@ class ComboSection extends Component {
         // --- This code is honestly sort of a mess and I should really fix it ---
         for (let i = 0; i < comboData.length; i++) {
 
+            // Launcher header
             returnHTML.push (
-                <h3 
-                    key={`launcher-${i}`}
-                >
-                    <a 
-                        target="_blank"
-                        rel="noreferrer"
-                        href={comboData[i].launcherDemo}
-                    >
+                <h3 key={`launcher-${i}`}>
+                    <a target="_blank" rel="noreferrer" href={comboData[i].launcherDemo} title="View demo">
                         {comboData[i].launcherName} Combos ({comboData[i].launcherNotation})
                     </a>
                 </h3>
@@ -46,37 +41,29 @@ class ComboSection extends Component {
                 let currentComboNotation = [];
                 for (let y = 0; y < seperatedNotation.length; y++) {
                     currentComboNotation.push(
-                        <span 
-                            key={`launcher-${i}-combo-${x}-notation-${y}`}
-                            className={`tn tn-${seperatedNotation[y]}`}
-                        />
+                        <span key={`launcher-${i}-combo-${x}-notation-${y}`} className={`tn tn-${seperatedNotation[y]}`}/>
                     )
                 }
 
-                returnHTML.push(
-                    <section
-                        key={`launcher-${i}-combo-${x}`}
-                    >
-                        <article
-                            className="combo-notation combo"
-                        >
-                            {currentComboNotation}
+                // Check if there are notes for the current combo
+                // This is used under the "damage" note for each combo
+                let comboDamage = (!comboData[i].routes[x].damage ? "Unknown" : comboData[i].routes[x].damage) 
+                let notesParagraph = [];
+                if (comboData[i].routes[x].notes) {
+                    notesParagraph.push(<>NOTES: {comboData[i].routes[x].notes}</>)
+                }
 
+                returnHTML.push(
+                    <section key={`launcher-${i}-combo-${x}`}>
+                        <article className="combo-notation combo">
+                            {currentComboNotation}
                             <nav className="combo-navigation">
-                                <a 
-                                    target="_blank" 
-                                    rel="noreferrer" 
-                                    href={comboData[i].routes[x].demo}
-                                >
+                                <a target="_blank" rel="noreferrer" href={comboData[i].routes[x].demo} title="View demo">
                                     <button>
                                         <FontAwesomeIcon icon={faVideoCamera} />
                                     </button>
                                 </a>
-                                <CopyToClipboard 
-                                    text={comboData[i].routes[x].textNotation}
-                                    onCopy={() => 
-                                        this.setState({ copied: true })}
-                                >
+                                <CopyToClipboard text={comboData[i].routes[x].textNotation} title="Copy to clipboard" onCopy={() => this.setState({ copied: true })}>
                                     <button>
                                         <FontAwesomeIcon icon={faClipboard} />
                                     </button>
@@ -86,9 +73,9 @@ class ComboSection extends Component {
 
                         <div className="combo-notes">
                             <p>
-                                DAMAGE: {comboData[i].routes[x].damage}
+                                DAMAGE: {comboDamage}
                                 <br />
-                                NOTES: {comboData[i].routes[x].notes}
+                                {notesParagraph}
                             </p>
                         </div>
                     </section>
@@ -96,17 +83,17 @@ class ComboSection extends Component {
             }
         }
 
-
+        // "Copied to clipboard" pop-up
+        // Pops up when button is pressed, then fades out after two seconds
         if (this.state.copied) {
             $(".clipboard-popup").show();
             setTimeout(() => {
-                $(".clipboard-popup").hide();
+                $(".clipboard-popup").fadeOut("slow", () => $(".clipboard-popup").hide());
             }, 2000);
         }
 
         return returnHTML;
     }
 }
-
 
 export default ComboSection;

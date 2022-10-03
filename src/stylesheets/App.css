@@ -60,6 +60,9 @@ a:hover {
     background: grey;
     height: 2rem;
 }
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(91, 91, 91);
+}
 
 /* Moving background gradient */
 @keyframes gradient {

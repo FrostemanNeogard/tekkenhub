@@ -8,13 +8,14 @@
 
 .right-side-content .character-guide {
     height: 100%;
-    background-color: rgb(59, 59, 59);
+    background-color: rgba(59, 59, 59, 0.6);
     padding: 2rem 3rem;
 }
 
 .character-topbar {
-    min-height: 7rem;
-    background-color: grey;
+    z-index: 10000000;
+    min-height: 6rem;
+    background-color: rgb(107, 107, 107);
     margin: 0 -0.5rem;
     padding: 0.2rem 1rem;
     display: grid;
@@ -97,25 +98,11 @@ tr:nth-child(even) {
 .character-info.overview img {
     float: right;
     height: 20rem;
+    margin-left: 1rem;
 }
 
 .character-info.combos video {
     width: 35%;
-}
-
-.character-info.combos .combo-notation {
-    display: flex;
-    background-color: rgb(85, 85, 85);
-    border: 2px solid rgb(255, 255, 255);
-    padding: 0.5rem;
-    align-items: center;
-    font-size: var(--combo-notation-height);
-    font-weight: 900;
-    text-transform: uppercase;
-    flex-wrap: wrap;
-    gap: 0.5rem 0;
-    margin: 0;
-    margin-top: 0.5rem;
 }
 
 .character-info.combos h3 {
@@ -126,22 +113,45 @@ tr:nth-child(even) {
     margin-top: 3rem; 
 }
 
+.character-info.combos .combo-notation {
+    position: relative;
+    display: flex;
+    background-color: rgb(85, 85, 85);
+    padding: 0.75rem 3rem 0.75rem 0.5rem;
+    align-items: center;
+    font-size: var(--combo-notation-height);
+    font-weight: 900;
+    text-transform: uppercase;
+    flex-wrap: wrap;
+    gap: 0.5rem 0;
+    margin: 0;
+    margin-top: 0.5rem;
+}
+
 .character-info.combos .combo-notation .combo-navigation {
     margin-left: auto;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-60%);
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
 }
 
 .character-info.combos .combo-notation .combo-navigation button {
     padding: 0;
-    margin: 0;
-    width: 100%;
+    margin: -0.05rem;
+    /* width: 100%; */
     color: white;
-    font-size: 2rem;
-    border: 1px solid white;
-    background-color: gray;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
 }
 
 .character-info.combos .combo-notation .combo-navigation button:hover {
-    background-color: rgb(85, 85, 85);
+    color: rgb(164, 164, 164);
+    cursor: pointer;
 }
 
 .character-info.combos .combo-notes p {
