@@ -124,12 +124,19 @@
         width: 7.5rem;
         height: 3rem;
         border-radius: 1em;
-        margin: 5px;
+        margin: 2px;
         padding: 0;
     }
 
+    .character-panel:hover {
+        cursor: pointer;
+        background-color: var(--character-panel-bg-color-hover);
+        left: 0;
+        bottom: 0.5rem;
+    }
+
     .character-panel:focus {
-        z-index: 2;
+        z-index: 999999;
         left: 0;
         bottom: 1rem;
     }

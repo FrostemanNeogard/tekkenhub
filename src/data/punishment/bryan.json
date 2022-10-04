@@ -49,11 +49,35 @@
         },
 
         {
+            "impact": "15",
+            "input": "f+2,1,4",
+            "damage": "42",
+            "hit": "KND",
+            "notes": "Mid, Wall Break"
+        },
+
+        {
+            "impact": "16",
+            "input": "b+4",
+            "damage": "18",
+            "hit": "+15",
+            "notes": "Wall Punish, Guaranteed f,b+2 or f,F+2"
+        },
+
+        {
             "impact": "18",
             "input": "f+4,1",
             "damage": "20",
             "hit": "Launch",
             "notes": "Long range"
+        },
+
+        {
+            "impact": "18",
+            "input": "in rage b+1+2",
+            "damage": "30",
+            "hit": "Launch",
+            "notes": "Rage, Long range"
         }
 
     ],
@@ -81,7 +105,30 @@
             "damage": "18",
             "hit": "+4",
             "notes": ""
+        },
+
+        {
+            "impact": "13",
+            "input": "FC+d/f+2,1",
+            "damage": "37",
+            "hit": "KND",
+            "notes": "Wall Splat, Wall Break"
+        },
+        
+        {
+            "impact": "15",
+            "input": "WS+1",
+            "damage": "20",
+            "hit": "Launch",
+            "notes": ""
+        },
+        
+        {
+            "impact": "19",
+            "input": "WS+2, f+2",
+            "damage": "43",
+            "hit": "Launch",
+            "notes": "Switches Side, can be inputted with WS+2, b+2"
         }
     ]
-
 }

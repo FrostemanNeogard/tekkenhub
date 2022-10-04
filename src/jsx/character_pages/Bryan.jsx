@@ -8,6 +8,8 @@ import ComboSection from '../components/ComboSection';
 import CharacterTopbar from '../components/CharacterTopBar';
 import '../../stylesheets/TekkenNotation.css';
 
+// TODO: Make this code work for every character page as to avoid copy pasting this file for everyone
+
 class Bryan extends Component {
 
     state = { displayFrames: false };
@@ -21,57 +23,78 @@ class Bryan extends Component {
         // Set the name that displays in the character top bar
         let characterName = CharacterInformation[0].name;
 
-        // Display frame data if displayFrames is set to true
-        if (this.state.displayFrames) {
-            return (
-                <section className="character-guide">
-                    <CharacterTopbar func={this.changeState} displayingFrames={this.state.displayFrames} characterName={characterName}/>
-                    <Framedata data={CharacterFrames}/>
-                </section>
-            )
-        }
-
-        // Display character guide if displayFrames is set to false
+        // Display character guide or frame data depending on displayingFrames state
         return (
-            <section className='character-guide'>
+            <section className="character-guide">
                 <CharacterTopbar func={this.changeState} displayingFrames={this.state.displayFrames} characterName={characterName}/>
-                <GenerateHeaders />
+                {this.state.displayFrames ? <Framedata data={CharacterFrames}/> : <CharacterPage />}
             </section>
-        )   
+        ) 
     }
 }
 
+// Creates the entire character page
+function CharacterPage() {
+    return (
+        <>
+            <Overview />
+            <TopMoves />
+            <Punishment />
+            <Combos />
+            <GenerateHeaders />
+        </>
+    )
+}
+
+// Overview Section
+function Overview() {
+    return (
+        <article className='character-info overview'>
+            <h2>Overview</h2>
+            <img src={CharacterInformation[0].image} alt={CharacterInformation[0].name} />
+            {FormatData(CharacterInformation[0].data)}
+        </article>
+    )
+}
+
+// Top Moves section
+function TopMoves() {
+    // TODO: Format this Top Moves section nicely
+
+    return (
+        <>
+            <article className='character-info overview'>
+                <h2>Top Moves</h2>
+                {FormatData(CharacterInformation[1])}
+            </article>
+        </>
+    )
+}
+
+// Generates the user made headers that are not Overview or Top Moves
 function GenerateHeaders() {
-    let returnHTML = [];
-    for (let i = 0; i < CharacterInformation.length; i++) {
-        if (CharacterInformation[i].header === "Overview") continue;
+    let remainingHeaders = [];
+    // Loop starts at 2 as to skip the first 2 entries (those being Overview and Top Moves).
+    for (let i = 2; i < CharacterInformation.length; i++) {
+
         if (!CharacterInformation[i].header) console.log(`ERROR: No header for ${this.characterName} detected at: ${CharacterInformation[i]}`)
 
-        if (i === 4) {
-            returnHTML.push(<Punishment key={`character-info-${i}-punishment`}/>)
-            returnHTML.push(<Combos key={`character-info-${i}-combos`}/>);
-        }
-
-        returnHTML.push(
+        remainingHeaders.push(
             <article className="character-info" key={`character-info-${i}`}>
                 <h2>{CharacterInformation[i].header}</h2>
-                <p>{CharacterInformation[i].data}</p>
+                {FormatData(CharacterInformation[i].data)}
             </article>
         )
     }
 
     return(
         <>
-            <article className='character-info overview'>
-                <h2>Overview</h2>
-                <img src={CharacterInformation[0].image} alt={CharacterInformation[0].name} />
-                <p>{CharacterInformation[0].data}</p>
-            </article>
-            {returnHTML}
+            {remainingHeaders}
         </>
     )
 }
 
+// Punishment section
 function Punishment() {
 
     let standingPunishmentTable = [];
@@ -136,6 +159,7 @@ function Punishment() {
     )
 }
 
+// Combo section
 function Combos() {
     // Render combos from the proper JSON file
     return (
@@ -144,6 +168,16 @@ function Combos() {
             <ComboSection data={CharacterCombos}/>
         </section>
     )
+}
+
+// Formats the data to allow for paragraph division
+// Splits multiple lines into multiple p elements rarther than concatenating the strings
+function FormatData(dataArray) {
+    let returnHTML = [];
+    for (let i = 0; i < dataArray.length; i++) {
+        returnHTML.push(<p key={i}>{dataArray[i]}</p>)
+    }
+    return returnHTML;
 }
 
 export default Bryan;

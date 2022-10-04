@@ -156,10 +156,14 @@
 }
 
 /* Text Notation */
-.tn-screw, .tn-ws, .tn-wr, .tn-fc, .tn-hold, .tn-dash {
+.tn-screw, .tn-ws, .tn-wr, .tn-fc, .tn-hold, .tn-dash, .tn-cc {
     color: white;
-    width:fit-content;
+    width: fit-content;
     margin: 0.2rem;
+}
+
+.tn-cc::before {
+    content: "CC";
 }
 
 .tn-screw::before {
@@ -184,4 +188,19 @@
 
 .tn-dash::before {
     content: "DASH";
+}
+
+
+/* TODO: Make the longer words fit properly on mobile */
+@media screen and (orientation: portrait) {
+    .tn-screw, .tn-ws, .tn-wr, .tn-fc, .tn-hold, .tn-dash {
+        font-size: 2rem !important;
+        width: 200px !important;
+    }
+
+    .tn {
+        height: calc(var(--combo-notation-height) * 0.5) !important;
+        width: calc(var(--combo-notation-height) * 0.5) !important;
+        font-size: calc(var(--combo-notation-height) * 0.8 * 0.5) !important;
+    }
 }

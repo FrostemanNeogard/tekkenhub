@@ -12,6 +12,15 @@ class TopBar extends Component {
                     onClick={() => {this.props.func('home')}}>
                         Home
                 </button>
+
+                {/* TODO: Create the tekken notation popup */}
+                {/* Absolute positioning on a pop up which appears on button click? */}
+                <button
+                    className='notation-button'
+                    // onClick={() => {this.props.func('home')}}
+                    >
+                        Notation
+                </button>
             </div>
         )
     }

@@ -119,7 +119,7 @@ tr:nth-child(even) {
     background-color: rgb(85, 85, 85);
     padding: 0.75rem 3rem 0.75rem 0.5rem;
     align-items: center;
-    font-size: var(--combo-notation-height);
+    font-size: 2.1rem;
     font-weight: 900;
     text-transform: uppercase;
     flex-wrap: wrap;

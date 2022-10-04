@@ -4,21 +4,115 @@
         "launcherNotation": "f,b+2",
         "launcherDemo": "https://gfycat.com/IncompatibleSlimyDuiker.gif",
         "routes": [
+
             {
-                "damage": "",
-                "graphicalNotation": "f,b,2,next,f,12,next,1,next,b,2,1,4,next,screw,next,b,3,f,2,1",
-                "textNotation": "f,b+2 f+1+2 1 b+2,1,4 S! b+3~f+2,1",
-                "notes": "This is a test note",
-                "demo": "https://gfycat.com/IncompatibleSlimyDuiker.gif"
+                "damage": "72",
+                "graphicalNotation": "f,b,2,next,dash,next,d,df,f,3,4,next,b,2,4,next,screw,next,b,3,f,2,1",
+                "textNotation": "f,b+2, dash, qcf+3,4 b+2,4, S!, b+3~f+2,1",
+                "notes": "Staple",
+                "demo": ""
             },
 
             {
-                "damage": "",
-                "graphicalNotation": "f,b,2,next,dash,next,d,df,f,3,4,next,b,2,4,next,screw,next,b,3,f,2,1",
-                "textNotation": "f,b+2 dash qcf+3,4 b+2,4 S! b+3~f+2,1",
+                "damage": "71",
+                "graphicalNotation": "f,b,2,next,f,12,next,1,next,b,2,1,4,next,screw,next,b,3,f,2,1",
+                "textNotation": "f,b+2 f+1+2 1 b+2,1,4 S! b+3~f+2,1",
                 "notes": "",
+                "demo": "https://gfycat.com/IncompatibleSlimyDuiker.gif"
+            }
+
+        ]
+    },
+
+    {
+        "launcherName": "Left Upper",
+        "launcherNotation": "WS+1",
+        "launcherDemo": "https://gfycat.com/IncompatibleSlimyDuiker.gif",
+        "routes": [
+
+            {
+                "damage": "72",
+                "graphicalNotation": "ws,1,next,d,df,f,3,4,next,b,2,4,next,screw,next,b,3,f,2,1",
+                "textNotation": "WS+1, iWS+3,4, b+2,4, S!, b+3~f+2,1",
+                "notes": "Staple",
+                "demo": ""
+            },
+
+            {
+                "damage": "70",
+                "graphicalNotation": "ws,1,next,f,b,2,next,b,3,f,4,1,4,next,screw,next,b,3,f,2,1",
+                "textNotation": "WS+1, f,b+2, b+3~f+4,1,4, S!, b+3~f+2,1",
+                "notes": "Easier staple, great wallcarry",
+                "demo": "https://gfycat.com/IncompatibleSlimyDuiker.gif"
+            }
+
+        ]
+    },
+
+    {
+        "launcherName": "Fisherman's Slam",
+        "launcherNotation": "WS+2, f+2",
+        "launcherDemo": "https://gfycat.com/IncompatibleSlimyDuiker.gif",
+        "routes": [
+
+            {
+                "damage": "87",
+                "graphicalNotation": "ws,2,f,2,next,b,2,1,4,next,screw,next,b,3,f,4,1,2",
+                "textNotation": "WS+2,f+2, b+2,1,4, S!, b+3~f+4,1,2",
+                "notes": "Staple",
                 "demo": ""
             }
+
+        ]
+    },
+    
+    {
+        "launcherName": "Boa Crusher",
+        "launcherNotation": "f+4,1",
+        "launcherDemo": "https://gfycat.com/IncompatibleSlimyDuiker.gif",
+        "routes": [
+
+            {
+                "damage": "72",
+                "graphicalNotation": "f,4,1,next,u,3,next,2,next,b,2,next,screw,next,b,3,f,2,1",
+                "textNotation": "f+4,1, u+3, 2, b+2,4, S!, b+3~f+2,1",
+                "notes": "Staple",
+                "demo": ""
+            },
+
+            {
+                "damage": "72",
+                "graphicalNotation": "f,4,1,next,d,df,f,3,4,next,4,3,4,next,screw,next,b,3,f,2,1",
+                "textNotation": "f+4,1, iWS+3,4, 4,3,4, S!, b+3~f+2,1",
+                "notes": "Harder staple",
+                "demo": ""
+            }
+
+        ]
+    },
+
+    {
+        "launcherName": "Orbital Heel",
+        "launcherNotation": "u/f+4",
+        "launcherDemo": "https://gfycat.com/IncompatibleSlimyDuiker.gif",
+        "routes": [
+
+            {
+                "damage": "64",
+                "graphicalNotation": "uf,4,next,db,2,next,2,next,b,2,4,next,screw,next,b,3,f,2,1",
+                "textNotation": "u/f+4, d/b+2, 2, b+2,4, S!, b+3~f+2,1",
+                "notes": "Staple",
+                "demo": ""
+            },
+
+            {
+                "damage": "74",
+                "graphicalNotation": "uf,4,next,d,df,f,3,4,next,4,3,4,next,screw,next,b,3,f,2,1",
+                "textNotation": "u/f+4, iWS+3,4, 4,3,4, S!, b+3~f+2,1",
+                "notes": "Harder Staple, SSR after Orbital helps consistencty.",
+                "demo": "https://gfycat.com/IncompatibleSlimyDuiker.gif"
+            }
+
         ]
     },
 
@@ -27,20 +121,23 @@
         "launcherNotation": "d/f+3",
         "launcherDemo": "https://gfycat.com/IncompatibleSlimyDuiker.gif",
         "routes": [
+
             {
-                "damage": 70,
+                "damage": "69",
                 "graphicalNotation": "df,3,next,f,fp,3,hold,next,screw,next,uf,3,next,2,next,b,3,f,2,1",
-                "textNotation": "d/f+3, f,f+3* S!, u/f+3, 2, b+3~f+2,1",
-                "notes": "",
+                "textNotation": "d/f+3, f,F+3*, S!, u/f+3, 2, b+3~f+2,1",
+                "notes": "Staple",
                 "demo": ""
             },
+
             {
-                "damage": 70,
-                "graphicalNotation": "df,3,next,ws,3,4,next,4,3,4,next,b,3,f,2,1",
-                "textNotation": "d/f+3, f,f+3* S!, u/f+3, 2, b+3~f+2,1",
-                "notes": "",
+                "damage": "72",
+                "graphicalNotation": "df,3,next,ws,3,4,next,3,4,next,4,3,4,next,b,3,f,2,1",
+                "textNotation": "d/f+3, WS+3,4, 4,3,4, S!, b+3~f+2,1",
+                "notes": "Somewhat inconsistent",
                 "demo": ""
             }
+
         ]
     }
 ]

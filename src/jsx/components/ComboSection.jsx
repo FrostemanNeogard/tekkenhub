@@ -50,7 +50,7 @@ class ComboSection extends Component {
                 let comboDamage = (!comboData[i].routes[x].damage ? "Unknown" : comboData[i].routes[x].damage) 
                 let notesParagraph = [];
                 if (comboData[i].routes[x].notes) {
-                    notesParagraph.push(<>NOTES: {comboData[i].routes[x].notes}</>)
+                    notesParagraph.push(<span key={i}>NOTES: {comboData[i].routes[x].notes}</span>)
                 }
 
                 returnHTML.push(
@@ -72,8 +72,8 @@ class ComboSection extends Component {
                         </article>
 
                         <div className="combo-notes">
-                            <p>
-                                DAMAGE: {comboDamage}
+                            <p key={i}>
+                                <span>DAMAGE: {comboDamage}</span>
                                 <br />
                                 {notesParagraph}
                             </p>
