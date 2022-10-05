@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CharacterFrames from '../../data/frames/bryan.json';
 import CharacterCombos from '../../data/combos/bryan.json';
+import CharacterTopMoves from '../../data/top_moves/bryan.json';
 import CharacterInformation from '../../data/information/bryan.json';
 import CharacterPunishment from '../../data/punishment/bryan.json';
 import Framedata from '../components/Framedata';
@@ -59,23 +60,39 @@ function Overview() {
 
 // Top Moves section
 function TopMoves() {
-    // TODO: Format this Top Moves section nicely
+    let returnHTML = [];
+    for (let i = 0; i < CharacterTopMoves.length; i++) {
+        returnHTML.push (
+            <section className='key-move-section' key={i}>
+                <h3>
+                    <a target="_blank" rel="noreferrer" href={CharacterTopMoves[i].demo}>
+                        {`${CharacterTopMoves[i].moveName} (${CharacterTopMoves[i].input})`}
+                    </a><span style={{fontWeight: "100"}}>{` (i${CharacterTopMoves[i].impact} ${CharacterTopMoves[i].hitProperty})`}</span>
+                </h3>
+                <span>Damage: {CharacterTopMoves[i].damage}</span>
+                <span>Block: {CharacterTopMoves[i].onBlock}</span>
+                <span>Hit: {CharacterTopMoves[i].onHit}</span>
+                <span>CH: {CharacterTopMoves[i].onCounter}</span>
+                {FormatData(CharacterTopMoves[i].information)}
+            </section>
+        )
+    }
+
+    // TODO: Add move tracking section
 
     return (
-        <>
-            <article className='character-info overview'>
-                <h2>Top Moves</h2>
-                {FormatData(CharacterInformation[1])}
-            </article>
-        </>
+        <article className='character-info key-moves'>
+            <h2>Key Moves</h2>
+            {returnHTML}
+        </article>
     )
 }
 
 // Generates the user made headers that are not Overview or Top Moves
 function GenerateHeaders() {
     let remainingHeaders = [];
-    // Loop starts at 2 as to skip the first 2 entries (those being Overview and Top Moves).
-    for (let i = 2; i < CharacterInformation.length; i++) {
+    // Loop starts at 1 as to skip the first entry, that being Overview.
+    for (let i = 1; i < CharacterInformation.length; i++) {
 
         if (!CharacterInformation[i].header) console.log(`ERROR: No header for ${this.characterName} detected at: ${CharacterInformation[i]}`)
 
@@ -88,9 +105,7 @@ function GenerateHeaders() {
     }
 
     return(
-        <>
-            {remainingHeaders}
-        </>
+        remainingHeaders
     )
 }
 

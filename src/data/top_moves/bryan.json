@@ -1,0 +1,46 @@
+[
+    {
+        "moveName": "Knee Strike",
+        "input": "f+3",
+        "impact": "16~18",
+        "hitProperty": "Mid",
+        "damage": "18",
+        "onBlock": "0~+2",
+        "onHit": "+4~+6",
+        "onCounter": "Launch",
+        "demo": "",
+        "information": [
+            "A neutral on block mid launcher with ambiguous tracking. Can be plus on block at range."
+        ]
+    },
+    
+    {
+        "moveName": "Middle Side Kick",
+        "input": "3+4",
+        "impact": "18",
+        "hitProperty": "Mid",
+        "damage": "20",
+        "onBlock": "-13",
+        "onHit": "KND",
+        "onCounter": "Launch",
+        "demo": "",
+        "information": [
+            "Possibly Bryan's best mid-range tool. CH launcher with great range and decent tracking. Decently safe to throw out whenever, although keep in mind it can be stepped to the right somewhat easily. Due to the huge pushback, it is nearly impossible to punish on block despite being -13."
+        ]
+    },
+    
+    {
+        "moveName": "Hatchet Kick",
+        "input": "QCB+3",
+        "impact": "19~20",
+        "hitProperty": "Low",
+        "damage": "23",
+        "onBlock": "-13",
+        "onHit": "+5",
+        "onCounter": "KND",
+        "demo": "",
+        "information": [
+            "Bryan's main power low. Tracks incredibly well and does great damage. Gives a guaranteed d+3+4,2 on counter hit which leads into taunt oki."
+        ]
+    }
+]

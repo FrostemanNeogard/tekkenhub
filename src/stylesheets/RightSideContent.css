@@ -101,6 +101,24 @@ tr:nth-child(even) {
     margin-left: 1rem;
 }
 
+.character-info.key-moves .key-move-section:not(:last-of-type) {
+    margin: 2rem 0;
+}
+
+.character-info.key-moves .key-move-section p:first-of-type {
+    margin-top: 0;
+}
+
+.character-info.key-moves .key-move-section h3 {
+    margin: 0;
+    font-size: 125%;
+}
+
+.character-info.key-moves .key-move-section span {
+    font-weight: 900;
+    margin-right: 1.5em;
+}
+
 .character-info.combos video {
     width: 35%;
 }
