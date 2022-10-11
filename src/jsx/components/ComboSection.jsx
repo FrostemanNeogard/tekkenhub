@@ -25,11 +25,14 @@ class ComboSection extends Component {
         for (let i = 0; i < comboData.length; i++) {
 
             // Launcher header
+            // Only adds a attribute if there is a combo launcher demo
             returnHTML.push (
                 <h3 key={`launcher-${i}`}>
-                    <a target="_blank" rel="noreferrer" href={comboData[i].launcherDemo} title="View demo">
-                        {comboData[i].launcherName} Combos ({comboData[i].launcherNotation})
-                    </a>
+                    {comboData[i].launcherDemo ? (
+                        <a target="_blank" rel="noreferrer" href={comboData[i].launcherDemo} title="View demo">
+                            {comboData[i].launcherName} Combos ({comboData[i].launcherNotation})
+                        </a>
+                    ) : (<>{comboData[i].launcherName} Combos {comboData[i].launcherNotation}</>)}
                 </h3>
             )
 
@@ -48,10 +51,6 @@ class ComboSection extends Component {
                 // Check if there are notes for the current combo
                 // This is used under the "damage" note for each combo
                 let comboDamage = (!comboData[i].routes[x].damage ? "Unknown" : comboData[i].routes[x].damage) 
-                let notesParagraph = [];
-                if (comboData[i].routes[x].notes) {
-                    notesParagraph.push(<span key={i}>NOTES: {comboData[i].routes[x].notes}</span>)
-                }
 
                 returnHTML.push(
                     <section key={`launcher-${i}-combo-${x}`}>
@@ -73,9 +72,8 @@ class ComboSection extends Component {
 
                         <div className="combo-notes">
                             <p key={i}>
-                                <span>DAMAGE: {comboDamage}</span>
-                                <br />
-                                {notesParagraph}
+                                {comboData[i].routes[x].damage ? <><span>DAMAGE: {comboData[i].routes[x].damage}</span><br /></> : <></>}
+                                {comboData[i].routes[x].notes ? <span key={i}>NOTES: {comboData[i].routes[x].notes}</span> : <></>}
                             </p>
                         </div>
                     </section>

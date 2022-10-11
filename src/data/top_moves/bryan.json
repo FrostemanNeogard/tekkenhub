@@ -23,7 +23,7 @@
         "onBlock": "-13",
         "onHit": "KND",
         "onCounter": "Launch",
-        "demo": "",
+        "demo": "http://localhost:3000",
         "information": [
             "Possibly Bryan's best mid-range tool. CH launcher with great range and decent tracking. Decently safe to throw out whenever, although keep in mind it can be stepped to the right somewhat easily. Due to the huge pushback, it is nearly impossible to punish on block despite being -13."
         ]

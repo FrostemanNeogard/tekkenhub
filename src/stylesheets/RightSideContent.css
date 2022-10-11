@@ -8,7 +8,8 @@
 
 .right-side-content .character-guide {
     height: 100%;
-    background-color: rgba(59, 59, 59, 0.6);
+    background-color: rgba(59, 59, 59, 0.75);
+    /* background-color: rgba(59, 59, 59, 1); */
     padding: 2rem 3rem;
 }
 

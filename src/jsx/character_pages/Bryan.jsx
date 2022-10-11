@@ -65,9 +65,13 @@ function TopMoves() {
         returnHTML.push (
             <section className='key-move-section' key={i}>
                 <h3>
-                    <a target="_blank" rel="noreferrer" href={CharacterTopMoves[i].demo}>
-                        {`${CharacterTopMoves[i].moveName} (${CharacterTopMoves[i].input})`}
-                    </a><span style={{fontWeight: "100"}}>{` (i${CharacterTopMoves[i].impact} ${CharacterTopMoves[i].hitProperty})`}</span>
+
+                    {CharacterTopMoves[i].demo ? (
+                        <a target="_blank" rel="noreferrer" href={CharacterTopMoves[i].demo}>
+                            {`${CharacterTopMoves[i].moveName} (${CharacterTopMoves[i].input})`}
+                        </a>
+                    ) : (<>{CharacterTopMoves[i].moveName} ({CharacterTopMoves[i].input})</>)
+                    }<span style={{fontWeight: "100"}}>{` (i${CharacterTopMoves[i].impact} ${CharacterTopMoves[i].hitProperty})`}</span>
                 </h3>
                 <span>Damage: {CharacterTopMoves[i].damage}</span>
                 <span>Block: {CharacterTopMoves[i].onBlock}</span>

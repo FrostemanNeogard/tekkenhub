@@ -1,31 +1,31 @@
 [
     {
         "input": "1",
-        "impact": 10,
-        "damage": 8,
-        "hit": 8,
-        "block": 1,
-        "counter": 8,
-        "notes": "a"
+        "impact": "10",
+        "damage": "8",
+        "hit": "8",
+        "block": "1",
+        "counter": "8",
+        "notes": "a",
+        "demo": "https://www.youtube.com/watch?v=rBdLrgvhuPQ"
     },
 
     {
         "input": "2",
-        "impact": 10,
-        "damage": 12,
-        "hit": 8,
-        "block": 1,
-        "counter": 8,
-        "notes": ""
+        "impact": "10",
+        "damage": "12",
+        "hit": "8",
+        "block": "1",
+        "counter": "8"
     },
 
     {
         "input": "2",
-        "impact": 10,
-        "damage": 12,
-        "hit": 8,
-        "block": 1,
-        "counter": 8,
-        "notes": ""
+        "impact": "10",
+        "damage": "12",
+        "hit": "8",
+        "block": "1",
+        "counter": "8",
+        "demo": ""
     }
 ]

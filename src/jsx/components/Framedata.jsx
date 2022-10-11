@@ -7,7 +7,9 @@ export default function Framedata(props) {
     for (let i = 0; i < frameData.length; i++) {
         returnHTML.push(
             <tr key={`framedata-row-${i}`}>
-                <td>{frameData[i].input}</td>
+                <td>
+                    {frameData[i].demo ? (<a target="_blank" rel="noreferrer" href={frameData[i].demo}>{frameData[i].input}</a>) : frameData[i].input}
+                </td>
                 <td>{frameData[i].impact}</td>
                 <td>{frameData[i].damage}</td>
                 <td>{frameData[i].hit}</td>
