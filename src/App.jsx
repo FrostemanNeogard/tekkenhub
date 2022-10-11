@@ -3,7 +3,8 @@ import CharacterSidebar from './jsx/components/CharacterSidebar';
 import TopBar from './jsx/components/TopBar';
 import RightSideContent from './jsx/components/RightSideContent';
 import { Component } from 'react';
-import PopUp from './jsx/components/PopUp';
+import CopiedToClipboardPopUp from './jsx/components/CopiedToClipboardPopUp';
+import TekkenLegendPopUp from './jsx/components/TekkenLegendPopUp';
 
 class App extends Component {
 
@@ -19,7 +20,8 @@ class App extends Component {
   	render() {
   		return (
   			<div className="App">
-				<PopUp />
+				<CopiedToClipboardPopUp />
+				<TekkenLegendPopUp />
 				<TopBar func={this.changeState}/>
 				<div className="content">
 					<nav className='main-navigation'>

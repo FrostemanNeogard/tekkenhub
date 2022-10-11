@@ -1,10 +1,11 @@
 import '../../stylesheets/TopBar.css';
 import { Component } from 'react';
+import $ from 'jquery';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faHouseChimney } from '@fortawesome/free-solid-svg-icons'
 
 class TopBar extends Component {
-    render() {   
+    render() {
         return (
             <div className="top-bar">
                 <button
@@ -12,18 +13,19 @@ class TopBar extends Component {
                     onClick={() => {this.props.func('home')}}>
                         Home
                 </button>
-
-                {/* TODO: Create the tekken notation popup */}
-                {/* Absolute positioning on a pop up which appears on button click? */}
                 <button
                     className='notation-button'
-                    // onClick={() => {this.props.func('home')}}
+                    onClick={() => {ShowTekkenLegend()}}
                     >
-                        Notation
+                        Notation Quick Reference
                 </button>
             </div>
         )
     }
+}
+
+function ShowTekkenLegend() {
+    $(".tekken-legend-popup").show();
 }
 
 export default TopBar;

@@ -64,13 +64,20 @@
     font-size: 200%;
 }
 
+table {
+    filter: drop-shadow(0 0 0.3rem black);
+}
+
+table th, table td {
+    padding: 2px 4px;
+}
+
 table.punishment, table.framedata {
     width: 100%;
     border-spacing: 2px 0;
 }
 
 table.punishment th, table.punishment td {
-    padding: 2px 4px;
     width: 20%;
 }
 
@@ -79,7 +86,6 @@ table.framedata {
 }
 
 table.framedata th, table.framedata td {
-    padding: 2px 4px;
     width: calc(100%/7);
 }
 
@@ -118,6 +124,29 @@ tr:nth-child(even) {
 .character-info.key-moves .key-move-section span {
     font-weight: 900;
     margin-right: 1.5em;
+}
+
+.character-info.key-moves .key-moves-tracking-table {
+    width: 100%;
+}
+
+.character-info.key-moves .key-moves-tracking-table tr:first-of-type {
+    background-color: rgb(95, 95, 95);
+}
+
+.character-info.key-moves .key-moves-tracking-table .tracks-ssl {
+    background-color: rgb(74, 76, 199);
+    width: calc(100%/3);
+}
+
+.character-info.key-moves .key-moves-tracking-table .tracks-both {
+    background-color: rgb(161, 59, 192);
+    width: calc(100%/3);
+}
+
+.character-info.key-moves .key-moves-tracking-table .tracks-ssr {
+    background-color: rgb(184, 73, 73);
+    width: calc(100%/3);
 }
 
 .character-info.combos video {

@@ -4,10 +4,10 @@ import ComboSection from './ComboSection';
 import CharacterTopbar from './CharacterTopBar';
 import '../../stylesheets/TekkenNotation.css';
 
-import BryanFrames from "../../data/frames/bryan.json"; import BryanCombos from "../../data/combos/bryan.json"; import BryanTopMoves from "../../data/top_moves/bryan.json"; import ByranInformation from "../../data/information/bryan.json"; import BryanPunishment from "../../data/punishment/bryan.json";
-import LeeFrames from "../../data/frames/lee.json"; import LeeCombos from "../../data/combos/lee.json"; import LeeTopMoves from "../../data/top_moves/lee.json"; import LeeInformation from "../../data/information/lee.json"; import LeePunishment from "../../data/punishment/lee.json";
+import BryanFrames from "../../data/frames/bryan.json"; import BryanCombos from "../../data/combos/bryan.json"; import BryanTopMoves from "../../data/top_moves/bryan.json"; import ByranInformation from "../../data/information/bryan.json"; import BryanPunishment from "../../data/punishment/bryan.json"; import BryanTracking from '../../data/tracking/bryan.json';
+import LeeFrames from "../../data/frames/lee.json"; import LeeCombos from "../../data/combos/lee.json"; import LeeTopMoves from "../../data/top_moves/lee.json"; import LeeInformation from "../../data/information/lee.json"; import LeePunishment from "../../data/punishment/lee.json"; import LeeTracking from '../../data/tracking/lee.json';
 
-var CharacterFrames, CharacterCombos, CharacterTopMoves, CharacterInformation, CharacterPunishment;
+var CharacterFrames, CharacterCombos, CharacterTopMoves, CharacterInformation, CharacterPunishment, CharacterTracking;
 
 class CharacterGuide extends Component {
 
@@ -83,11 +83,29 @@ function TopMoves() {
         )
     }
 
-    // TODO: Add move tracking section
     return (
         <article className='character-info key-moves'>
             <h2>Key Moves</h2>
             {returnHTML}
+            <table className='key-moves-tracking-table'>
+                <thead>
+                    <tr>
+                        <th colSpan={3}>Tracking Quick Reference</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th className='tracks-ssl'>Tracks SSL</th>
+                        <th className='tracks-both'>Tracks Both</th>
+                        <th className='tracks-ssr'>Tracks SSR</th>
+                    </tr>
+                    <tr>
+                        <td className='tracks-ssl'>{CharacterTracking.ssl[0].length > 0  ? CharacterTracking.ssl : "Missing data"}</td>
+                        <td className='tracks-both'>{CharacterTracking.both[0].length > 0 ? CharacterTracking.both : "Missing data"}</td>
+                        <td className='tracks-ssr'>{CharacterTracking.ssr[0].length > 0 ? CharacterTracking.ssr : "Missing data"}</td>
+                    </tr>
+                </tbody>
+            </table>
         </article>
     )
 }
@@ -207,6 +225,7 @@ function GetCharacterData(charName) {
             CharacterTopMoves = BryanTopMoves;
             CharacterInformation = ByranInformation;
             CharacterPunishment = BryanPunishment;
+            CharacterTracking = BryanTracking;
             break;
         case "lee":
             CharacterFrames = LeeFrames;
@@ -214,6 +233,7 @@ function GetCharacterData(charName) {
             CharacterTopMoves = LeeTopMoves;
             CharacterInformation = LeeInformation;
             CharacterPunishment = LeePunishment;
+            CharacterTracking = LeeTracking;
             break;
         default:
             console.log("Error catching character:",charName,"'s information.")
