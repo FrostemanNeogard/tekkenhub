@@ -50,6 +50,7 @@ function GetCharacterPanels(props) {
     return returnHTML;
 }
 
+// TODO: Maybe fix this, I'm not sure if it's THAT bad or not
 // (currently temporary) function to get the names of all characters
 // which is used in the creation of their panels in the sidebar
 // If name starts with "-", it is work in progress.
@@ -86,7 +87,7 @@ function GetCharacters() {
         '-Kunimitsu',
         '-Lars',
         '-Law',
-        '-Lee',
+        'Lee',
         '-Lei',
         '-Leo',
         '-Leroy',

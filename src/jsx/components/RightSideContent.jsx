@@ -1,6 +1,6 @@
 import '../../stylesheets/RightSideContent.css'
 import HomePage from '../components/HomePage';
-import Bryan from '../character_pages/Bryan';
+import CharacterGuide from '../components/CharacterGuide';
 import { Component } from 'react';
 
 class RightSideContent extends Component {
@@ -15,7 +15,8 @@ class RightSideContent extends Component {
 function GetSelectedCharacter(props) {
     switch(props.name) {
         case 'home': return <HomePage />;
-        case 'Bryan': return <Bryan />;
+        case 'Bryan': return <CharacterGuide name="bryan"/>;
+        case 'Lee': return <CharacterGuide name="lee"/>;
 
         default:
             return <h1>This page does not exist yet.</h1>

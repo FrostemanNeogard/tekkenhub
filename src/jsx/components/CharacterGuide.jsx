@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
-import CharacterFrames from '../../data/frames/bryan.json';
-import CharacterCombos from '../../data/combos/bryan.json';
-import CharacterTopMoves from '../../data/top_moves/bryan.json';
-import CharacterInformation from '../../data/information/bryan.json';
-import CharacterPunishment from '../../data/punishment/bryan.json';
-import Framedata from '../components/Framedata';
-import ComboSection from '../components/ComboSection';
-import CharacterTopbar from '../components/CharacterTopBar';
+import Framedata from './Framedata';
+import ComboSection from './ComboSection';
+import CharacterTopbar from './CharacterTopBar';
 import '../../stylesheets/TekkenNotation.css';
 
-// TODO: Make this code work for every character page as to avoid copy pasting this file for everyone
+import BryanFrames from "../../data/frames/bryan.json"; import BryanCombos from "../../data/combos/bryan.json"; import BryanTopMoves from "../../data/top_moves/bryan.json"; import ByranInformation from "../../data/information/bryan.json"; import BryanPunishment from "../../data/punishment/bryan.json";
+import LeeFrames from "../../data/frames/lee.json"; import LeeCombos from "../../data/combos/lee.json"; import LeeTopMoves from "../../data/top_moves/lee.json"; import LeeInformation from "../../data/information/lee.json"; import LeePunishment from "../../data/punishment/lee.json";
 
-class Bryan extends Component {
+var CharacterFrames, CharacterCombos, CharacterTopMoves, CharacterInformation, CharacterPunishment;
+
+class CharacterGuide extends Component {
 
     state = { displayFrames: false };
 
@@ -20,6 +18,9 @@ class Bryan extends Component {
     }
 
     render() {   
+
+        // Get all data about the given character
+        GetCharacterData(this.props.name);
 
         // Set the name that displays in the character top bar
         let characterName = CharacterInformation[0].name;
@@ -83,7 +84,6 @@ function TopMoves() {
     }
 
     // TODO: Add move tracking section
-
     return (
         <article className='character-info key-moves'>
             <h2>Key Moves</h2>
@@ -199,4 +199,26 @@ function FormatData(dataArray) {
     return returnHTML;
 }
 
-export default Bryan;
+function GetCharacterData(charName) {
+    switch(charName) {
+        case "bryan":
+            CharacterFrames = BryanFrames;
+            CharacterCombos = BryanCombos
+            CharacterTopMoves = BryanTopMoves;
+            CharacterInformation = ByranInformation;
+            CharacterPunishment = BryanPunishment;
+            break;
+        case "lee":
+            CharacterFrames = LeeFrames;
+            CharacterCombos = LeeCombos
+            CharacterTopMoves = LeeTopMoves;
+            CharacterInformation = LeeInformation;
+            CharacterPunishment = LeePunishment;
+            break;
+        default:
+            console.log("Error catching character:",charName,"'s information.")
+            break;
+    }
+}
+
+export default CharacterGuide;

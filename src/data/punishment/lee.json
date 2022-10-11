@@ -1,0 +1,22 @@
+{
+    "standing": [
+        {
+            "impact": "10",
+            "input": "1,3:3:3",
+            "damage": "",
+            "hit": "",
+            "notes": ""
+        }
+
+    ],
+
+    "crouching": [
+        {
+            "impact": "10",
+            "input": "WS+3,3",
+            "damage": "",
+            "hit": "",
+            "notes": ""
+        }
+    ]
+}

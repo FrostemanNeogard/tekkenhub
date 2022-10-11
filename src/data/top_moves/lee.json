@@ -1,0 +1,16 @@
+[
+    {
+        "moveName": "Dumb kick",
+        "input": "f,F+4",
+        "impact": "?",
+        "hitProperty": "High",
+        "damage": "idk",
+        "onBlock": "idk",
+        "onHit": "Launch",
+        "onCounter": "Launch",
+        "demo": "",
+        "information": [
+            "i hate this move"
+        ]
+    }
+]

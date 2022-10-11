@@ -42,5 +42,20 @@
         "information": [
             "Bryan's main power low. Tracks incredibly well and does great damage. Gives a guaranteed d+3+4,2 on counter hit which leads into taunt oki."
         ]
+    },
+
+    {
+        "moveName": "Taunt",
+        "input": "1+3+4",
+        "impact": "28~31",
+        "hitProperty": "Unblockable Mid",
+        "damage": "0",
+        "onBlock": "+16~19",
+        "onHit": "+16~19",
+        "onCounter": "+16~19",
+        "demo": "",
+        "information": [
+            "Being an unblockable mid that leads to guaranteed follow-ups, taunt single handedly creates Bryan's deadly okizeme. After several knockdowns, taunt is fully guaranteed on opponents who techroll. The most common setups include 3+4 on normal hit, 1+2,2 on normal hit, and of course after Bryan's wallcombo. More on this in the taunt section."
+        ]
     }
 ]
