@@ -161,7 +161,7 @@ function Punishment() {
 
     return (
         <section className="character-info punishment">
-            <h2>Punishment</h2>
+            <h2 id="Punishment">Punishment</h2>
 
             {/* Standing Punishment */}
             <h3>Standing</h3>
@@ -200,7 +200,7 @@ function Punishment() {
 function Combos() {
     // Render combos from the proper JSON file
     return (
-        <section className="character-info combos">
+        <section className="character-info combos" id="Combos">
             <h2>Combos</h2>
             <ComboSection data={CharacterCombos}/>
         </section>

@@ -1,10 +1,9 @@
 import '../../stylesheets/TopBar.css';
 import { Component } from 'react';
 import $ from 'jquery';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faHouseChimney } from '@fortawesome/free-solid-svg-icons'
 
 class TopBar extends Component {
+
     render() {
         return (
             <div className="top-bar">

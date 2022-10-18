@@ -1,14 +1,45 @@
 import '../../stylesheets/CharacterSidebar.css';
 import React, { Component } from 'react';
+import $ from 'jquery';
 
 class CharacterSidebar extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {displayingCharacterList: "false"};
+    }
+
+    updateDisplayingCharacterList = () => {
+        this.setState({displayingCharacterList: !this.state.displayingCharacterList});
+    }
+
     render() {
         return (
             <section className="character-sidebar">
+                <button className='show-character-sidebar' onClick={() => {
+                    MoveCharacterSidebar(this.state.displayingCharacterList);
+                    this.updateDisplayingCharacterList(); 
+                }}>{`>`}</button>
                 <GetCharacterPanels func={this.props.func}/>
             </section>
         )
     }
+}
+
+function MoveCharacterSidebar(stateBool) {
+    if (stateBool) {
+        return (
+            $(".character-list").css({
+                'transform': 'none'
+            })
+        )
+    }
+
+    return (
+        $(".character-list").css({
+            'transform': 'translateX(-110%)'
+        })
+    )
 }
 
 // Function to create an article for each character including an image and a heading
@@ -25,15 +56,15 @@ function GetCharacterPanels(props) {
     // For each character, create a character-panel article for them
     for (let i = 0; i < characterArray.length; i++) {
         let characterName = characterArray[i];
-        let WIP = false;
+        let wip = false;
         if (characterArray[i].startsWith('-')) {
-            WIP = true;
+            wip = true;
             characterName = characterName.substring(1);
         }
 
         returnHTML.push (
             <article 
-                className={`character-panel ${WIP ? "work-in-progress" : ""}`}
+                className={`character-panel ${wip ? "work-in-progress" : ""}`}
                 key={`character-panel-${characterName}`}
                 onClick={() => {
                     window.scrollTo(0, 0)
@@ -47,7 +78,13 @@ function GetCharacterPanels(props) {
     }
 
     // Return the resulting HTML code
-    return returnHTML;
+    return (
+    <>
+        <section className="character-list">   
+            {returnHTML}
+        </section>
+    </>
+    )
 }
 
 // TODO: Maybe fix this, I'm not sure if it's THAT bad or not

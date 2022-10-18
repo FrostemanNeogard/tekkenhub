@@ -2,9 +2,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowsRotate } from '@fortawesome/free-solid-svg-icons'
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
 
+// Props include a function to change state on the character page, the state itself, as well as the character name
 export default function CharacterTopbar(props) {
 
-    // Props include a function to change state on the character page, the state itself, as well as the character name
+    // TODO: Add a dropdown navigation menu (Table of contents)
 
     // Create the navbar at the top of the character pages
     return (
