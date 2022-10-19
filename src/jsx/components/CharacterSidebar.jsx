@@ -19,15 +19,15 @@ class CharacterSidebar extends Component {
         return (
             <section className="character-sidebar">
                 <div className='dim-background'></div>
-                <button className='show-character-sidebar' onClick={() => {
+                <div className='show-character-sidebar' onClick={() => {
                     MoveCharacterSidebar(this.state.displayingCharacterList);
                     this.updateDisplayingCharacterList(); 
                 }}>
                     <div>
-                        <p><FontAwesomeIcon icon={faArrowRight}/></p>
                         <h4>Character List</h4>
+                        <p><FontAwesomeIcon icon={faArrowRight}/></p>
                     </div>
-                </button>
+                </div>
                 <GetCharacterPanels func={this.props.func}/>
             </section>
         )
