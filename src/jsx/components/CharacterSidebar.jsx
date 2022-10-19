@@ -23,7 +23,10 @@ class CharacterSidebar extends Component {
                     MoveCharacterSidebar(this.state.displayingCharacterList);
                     this.updateDisplayingCharacterList(); 
                 }}>
-                    <p><FontAwesomeIcon icon={faArrowRight}/></p>
+                    <div>
+                        <p><FontAwesomeIcon icon={faArrowRight}/></p>
+                        <h4>Character List</h4>
+                    </div>
                 </button>
                 <GetCharacterPanels func={this.props.func}/>
             </section>
@@ -44,8 +47,8 @@ function MoveCharacterSidebar(stateBool) {
                 'transform': 'none'
             }),
 
-            $(".show-character-sidebar > p").css({
-                'transform': 'translateX(20%) rotate(180deg)'
+            $(".show-character-sidebar p").css({
+                'transform': 'rotate(180deg)'
             })
         )
     }
@@ -61,8 +64,8 @@ function MoveCharacterSidebar(stateBool) {
             'transform': 'translateX(-100%)'
         }),
 
-        $(".show-character-sidebar > p").css({
-        'transform': 'translateX(150%) rotate(0deg)'
+        $(".show-character-sidebar p").css({
+            'transform': 'rotate(0deg)'
         })
     )
 }
