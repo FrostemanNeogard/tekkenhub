@@ -1,16 +1,16 @@
 [
     {
-        "moveName": "Dumb kick",
-        "input": "f,F+4",
-        "impact": "?",
-        "hitProperty": "High",
-        "damage": "idk",
-        "onBlock": "idk",
-        "onHit": "Launch",
+        "moveName": "Silver Heel",
+        "input": "b+4",
+        "impact": "20~22",
+        "hitProperty": "Mid",
+        "damage": "20",
+        "onBlock": "-3~-1",
+        "onHit": "KND",
         "onCounter": "Launch",
         "demo": "",
         "information": [
-            "i hate this move"
+            ""
         ]
     }
 ]

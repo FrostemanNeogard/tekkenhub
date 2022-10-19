@@ -68,6 +68,10 @@ a:hover {
 
 /* Scrollbar */
 ::-webkit-scrollbar {
+    display: none;
+}
+/* 
+::-webkit-scrollbar {
     background: rgb(51, 51, 51);
 }
 ::-webkit-scrollbar-thumb {
@@ -76,7 +80,7 @@ a:hover {
 }
 ::-webkit-scrollbar-thumb:hover {
     background: rgb(91, 91, 91);
-}
+} */
 
 .small-margin-content * {
     margin: 0.1rem;

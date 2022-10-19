@@ -24,7 +24,7 @@ class TopBar extends Component {
 }
 
 function ShowTekkenLegend() {
-    $(".tekken-legend-popup").show();
+    $(".tekken-legend-popup").fadeIn();
 }
 
 export default TopBar;

@@ -1,6 +1,8 @@
 import '../../stylesheets/CharacterSidebar.css';
 import React, { Component } from 'react';
 import $ from 'jquery';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
 class CharacterSidebar extends Component {
 
@@ -16,10 +18,13 @@ class CharacterSidebar extends Component {
     render() {
         return (
             <section className="character-sidebar">
+                <div className='dim-background'></div>
                 <button className='show-character-sidebar' onClick={() => {
                     MoveCharacterSidebar(this.state.displayingCharacterList);
                     this.updateDisplayingCharacterList(); 
-                }}>{`>`}</button>
+                }}>
+                    <p><FontAwesomeIcon icon={faArrowRight}/></p>
+                </button>
                 <GetCharacterPanels func={this.props.func}/>
             </section>
         )
@@ -29,15 +34,35 @@ class CharacterSidebar extends Component {
 function MoveCharacterSidebar(stateBool) {
     if (stateBool) {
         return (
-            $(".character-list").css({
+            $(".dim-background").fadeIn(() => $(".dim-background").show()),
+
+            $("html").css({
+                'overflow-y': 'hidden',
+            }),
+
+            $(".character-sidebar").css({
                 'transform': 'none'
+            }),
+
+            $(".show-character-sidebar > p").css({
+                'transform': 'translateX(20%) rotate(180deg)'
             })
         )
     }
 
     return (
-        $(".character-list").css({
-            'transform': 'translateX(-110%)'
+        $("html").css({
+            'overflow-y': 'scroll',
+        }),
+
+        $(".dim-background").fadeOut(() => $(".dim-background").hide()),
+
+        $(".character-sidebar").css({
+            'transform': 'translateX(-100%)'
+        }),
+
+        $(".show-character-sidebar > p").css({
+        'transform': 'translateX(150%) rotate(0deg)'
         })
     )
 }
