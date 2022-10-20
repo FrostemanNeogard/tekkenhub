@@ -16,7 +16,7 @@ class HomePage extends Component {
                 <p>
                     This is currently a work in progress site which is quite early in 
                     development. It is constantly being worked on and the full project can be found 
-                    on <a href='https://github.com/FrostemanNeogard/tekkenwebsitev2' target='_blank' rel='noreferrer'>GitHub</a>.
+                    on <a href='https://github.com/FrostemanNeogard/tekkenhub' target='_blank' rel='noreferrer'>GitHub</a>.
                 </p>
 
             </section>
