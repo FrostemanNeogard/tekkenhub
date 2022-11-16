@@ -48,24 +48,24 @@ function MoveCharacterSidebar(stateBool) {
             }),
 
             $(".show-character-sidebar p").css({
-                'transform': 'rotate(180deg)'
+                'transform': 'rotate(180deg) translateX(-5px)'
             })
-        )
-    }
-
+            )
+        }
+        
     return (
-        $("html").css({
+            $("html").css({
             'overflow-y': 'scroll',
         }),
-
+        
         $(".dim-background").fadeOut(() => $(".dim-background").hide()),
-
+        
         $(".character-sidebar").css({
             'transform': 'translateX(-100%)'
         }),
-
+        
         $(".show-character-sidebar p").css({
-            'transform': 'rotate(0deg)'
+            'transform': 'rotate(0deg)',
         })
     )
 }
@@ -78,7 +78,7 @@ function GetCharacterPanels(props) {
     // TEMPORARY way of getting an array of all characters
     let characterArray = GetCharacters();
 
-    // Get all images from ../images/character_panels
+    // Get all images from ../images/character_panels/small
     let characterImages = ImportAll(require.context('../../images/character_panels/small', false, /\.png$/));
 
     // For each character, create a character-panel article for them
@@ -115,7 +115,8 @@ function GetCharacterPanels(props) {
     )
 }
 
-// TODO: Maybe fix this, I'm not sure if it's THAT bad or not
+// TODO: Maybe fix this, I'm not sure if it's THAT bad or not.
+
 // (currently temporary) function to get the names of all characters
 // which is used in the creation of their panels in the sidebar
 // If name starts with "-", it is work in progress.
