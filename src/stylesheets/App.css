@@ -6,15 +6,18 @@ body, html { padding: 0; margin: 0; } *, *::before, *::after { box-sizing: borde
 
 /* Variables */
 :root {
-    --primary-bg-color: rgb(51, 51, 51);
-    --secondary-bg-color: grey;
+    --primary-bg: #080808;
+    --secondary-bg: #2a2a2b;
+    --right-side-content-bg: #1f1f1f;
+    --character-sidebar-bg: rgba(54, 54, 54, 0.6);
+    --character-sidebar-bg-hover: rgba(54, 54, 54, 0.6);
 
     --primary-text-color: white;
     --secondary-text-color: black;
 
     --character-panel-bg-color: black;
     --character-panel-bg-color-hover: rgb(51, 51, 51);
-    --character-panel-border-radius: 1rem;
+    --character-panel-border-radius: 10px;
 
     --combo-notation-height: 1em;
 }
@@ -40,7 +43,8 @@ html {
     background-size: 100%;
     background-attachment: fixed; */
 
-    background: linear-gradient(to bottom right, rgb(96, 152, 161), rgb(46, 114, 50));
+    /* background: linear-gradient(to bottom right, rgb(96, 152, 161), rgb(46, 114, 50)); */
+    background: var(--primary-bg);
 
     color: var(--primary-text-color);
 
