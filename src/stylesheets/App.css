@@ -30,20 +30,6 @@ html {
 .App {
     width: 100%;
     min-height: 100vh;
-    
-	/* background: linear-gradient(-85deg, #a74444, #ab7839, #a09c34, #3ba548, #509ccc, rgb(135, 25, 157), rgb(202, 79, 202));
-	background-size: 1400% 200%;
-	animation: gradient 60s ease-in-out infinite;
-    background-color: var(--primary-bg-color); */
-
-    /* background-color: rgb(156, 97, 42); */
-
-    /* background-image: url("https://i.pinimg.com/originals/6e/50/1a/6e501a0c1b786de08915851c537bae73.jpg");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-attachment: fixed; */
-
-    /* background: linear-gradient(to bottom right, rgb(96, 152, 161), rgb(46, 114, 50)); */
     background: var(--primary-bg);
 
     color: var(--primary-text-color);
