@@ -4,10 +4,10 @@ import ComboSection from './ComboSection';
 import CharacterTopbar from './CharacterTopBar';
 import '../../stylesheets/TekkenNotation.css';
 
-import BryanFrames from "../../data/frames/bryan.json"; import BryanCombos from "../../data/combos/bryan.json"; import BryanTopMoves from "../../data/top_moves/bryan.json"; import ByranInformation from "../../data/information/bryan.json"; import BryanPunishment from "../../data/punishment/bryan.json"; import BryanTracking from '../../data/tracking/bryan.json';
-import LeeFrames from "../../data/frames/lee.json"; import LeeCombos from "../../data/combos/lee.json"; import LeeTopMoves from "../../data/top_moves/lee.json"; import LeeInformation from "../../data/information/lee.json"; import LeePunishment from "../../data/punishment/lee.json"; import LeeTracking from '../../data/tracking/lee.json';
-
-var CharacterFrames, CharacterCombos, CharacterTopMoves, CharacterInformation, CharacterPunishment, CharacterTracking;
+// TODO: Fix the way this works. The current implementation is really bad, but it DOES work.
+import BryanFrames from "../../data/frames/bryan.json"; import BryanCombos from "../../data/combos/bryan.json"; import BryanTopMoves from "../../data/top_moves/bryan.json"; import ByranInformation from "../../data/information/bryan.json"; import BryanPunishment from "../../data/punishment/bryan.json"; import BryanTracking from '../../data/tracking/bryan.json'; import BryanImage from '../../images/character_panels/full/bryan.png';
+import LeeFrames from "../../data/frames/lee.json"; import LeeCombos from "../../data/combos/lee.json"; import LeeTopMoves from "../../data/top_moves/lee.json"; import LeeInformation from "../../data/information/lee.json"; import LeePunishment from "../../data/punishment/lee.json"; import LeeTracking from '../../data/tracking/lee.json'; import LeeImage from '../../images/character_panels/full/lee.png';
+var CharacterFrames, CharacterCombos, CharacterTopMoves, CharacterInformation, CharacterPunishment, CharacterTracking, CharacterImage;
 
 class CharacterGuide extends Component {
 
@@ -53,7 +53,7 @@ function Overview() {
     return (
         <article className='character-info overview'>
             <h2>Overview</h2>
-            <img src={CharacterInformation[0].image} alt={CharacterInformation[0].name} />
+            <img src={CharacterImage} alt={CharacterInformation[0].name} />
             {FormatData(CharacterInformation[0].data)}
         </article>
     )
@@ -226,6 +226,7 @@ function GetCharacterData(charName) {
             CharacterInformation = ByranInformation;
             CharacterPunishment = BryanPunishment;
             CharacterTracking = BryanTracking;
+            CharacterImage = BryanImage;
             break;
         case "lee":
             CharacterFrames = LeeFrames;
@@ -234,6 +235,7 @@ function GetCharacterData(charName) {
             CharacterInformation = LeeInformation;
             CharacterPunishment = LeePunishment;
             CharacterTracking = LeeTracking;
+            CharacterImage = LeeImage;
             break;
         default:
             console.log("Error catching character:",charName,"'s information.")
