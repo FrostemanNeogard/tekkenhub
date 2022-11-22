@@ -46,6 +46,10 @@ html {
     flex-direction: row;
 }
 
+p {
+    text-align: justify;
+}
+
 a {
     color: rgb(139, 255, 255);
     height: 0;
@@ -77,17 +81,4 @@ a:hover {
 
 .small-margin-content * {
     margin: 0.1rem;
-}
-
-/* Moving background gradient */
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
 }
