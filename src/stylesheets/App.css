@@ -19,7 +19,7 @@ body, html { padding: 0; margin: 0; } *, *::before, *::after { box-sizing: borde
     --character-panel-bg-color-hover: rgb(51, 51, 51);
     --character-panel-border-radius: 10px;
 
-    --combo-notation-height: 1em;
+    --combo-notation-height: calc(1.5vmin + 1rem);
 }
 
 /* Actual content */
