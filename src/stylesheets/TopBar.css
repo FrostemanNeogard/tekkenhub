@@ -1,14 +1,17 @@
 .top-bar {
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding: 1rem;
+    padding: 1.5rem 25vmin;
     background-color: black;
+    width: 100%;
+    gap: 0 3rem;
+}
+
+.top-bar button.home-button {
+    margin-right: auto;
 }
 
 .top-bar button {
-    margin-right: auto;
-    margin-left: auto;
     border: none;
     text-align: center;
     font-weight: 900;
@@ -21,4 +24,11 @@
 .top-bar button:hover {
     cursor: pointer;
     color: rgb(203, 203, 203);
+}
+
+@media screen and (orientation: portrait) {
+    .top-bar {
+        padding: 1.5rem 0;
+        gap: 0;
+    }
 }
