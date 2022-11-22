@@ -1,8 +1,8 @@
 .right-side-content {
     margin-left: auto;
     margin-right: auto;
-    width: 80%;
-    padding: 0 4rem;
+    width: 65%;
+    padding: 0 8vmin;
     filter: drop-shadow(0 0 1rem black);
 }
 
@@ -105,7 +105,8 @@ tr:nth-child(even) {
     float: right;
     height: 20rem;
     margin-left: 1rem;
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.5) 35%, rgba(0, 0, 0, 0) 100%);
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 15%, rgba(0, 0, 0, 0) 100%);
+    filter: drop-shadow(0 0.5rem 0.3rem black);
 }
 
 .character-info.key-moves .key-move-section:not(:last-of-type) {
