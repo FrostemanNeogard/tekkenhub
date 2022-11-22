@@ -12,11 +12,13 @@ class TopBar extends Component {
                     onClick={() => {this.props.func('home')}}>
                         Home
                 </button>
+                <button>
+                    Contact
+                </button>
                 <button
-                    className='notation-button'
                     onClick={() => {ShowTekkenLegend()}}
                     >
-                        Notation Quick Reference
+                        Notation
                 </button>
             </div>
         )
