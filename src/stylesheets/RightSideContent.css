@@ -49,10 +49,6 @@
     color: rgb(211, 211, 211);
 }
 
-.character-info p {
-    text-align: justify;
-}
-
 .character-info:not(:first-child) {
     padding-top: 2rem;
 }
