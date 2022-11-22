@@ -30,7 +30,7 @@ class ComboSection extends Component {
                         <a target="_blank" rel="noreferrer" href={comboData[i].launcherDemo} title="View demo">
                             {comboData[i].launcherName} Combos ({comboData[i].launcherNotation})
                         </a>
-                    ) : (<>{comboData[i].launcherName} Combos {comboData[i].launcherNotation}</>)}
+                    ) : (<>{comboData[i].launcherName} Combos ({comboData[i].launcherNotation})</>)}
                 </h3>
             )
 
