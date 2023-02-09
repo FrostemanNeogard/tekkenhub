@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/tekkenhub/static/css/main.9d70bac1.css",
+    "main.css": "/tekkenhub/static/css/main.8893d4fb.css",
     "main.js": "/tekkenhub/static/js/main.775fba8d.js",
     "static/media/shaheen_small.png": "/tekkenhub/static/media/shaheen_small.9846472f4465c0da24c4.png",
     "static/media/dragunov_small.png": "/tekkenhub/static/media/dragunov_small.d7a18b103643ecec634b.png",
@@ -90,11 +90,11 @@
     "static/media/bracketL.svg": "/tekkenhub/static/media/bracketL.b7eb0be62635f1b5136e.svg",
     "static/media/bracketR.svg": "/tekkenhub/static/media/bracketR.206e4ecf084a348a5a61.svg",
     "index.html": "/tekkenhub/index.html",
-    "main.9d70bac1.css.map": "/tekkenhub/static/css/main.9d70bac1.css.map",
+    "main.8893d4fb.css.map": "/tekkenhub/static/css/main.8893d4fb.css.map",
     "main.775fba8d.js.map": "/tekkenhub/static/js/main.775fba8d.js.map"
   },
   "entrypoints": [
-    "static/css/main.9d70bac1.css",
+    "static/css/main.8893d4fb.css",
     "static/js/main.775fba8d.js"
   ]
 }
