@@ -205,3 +205,17 @@ tr:nth-child(even) {
 .character-info.combos .combo-notes p {
     margin-top: 0;
 }
+
+/* "Mobile" settings */
+@media screen and (max-width: 1079px) {
+    .character-topbar {
+        width: 99.75%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Set a little padding when a character guide is not displayed */
+    .right-side-content:not(:has(section > section)) {
+        padding: 0 5vmin !important;
+    }
+}
