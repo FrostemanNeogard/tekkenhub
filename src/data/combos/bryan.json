@@ -132,7 +132,7 @@
 
             {
                 "damage": "72",
-                "graphicalNotation": "df,3,next,ws,3,4,next,3,4,next,4,3,4,next,b,3,f,2,1",
+                "graphicalNotation": "df,3,next,ws,3,4,next,4,3,4,next,b,3,f,2,1",
                 "textNotation": "d/f+3, WS+3,4, 4,3,4, S!, b+3~f+2,1",
                 "notes": "Somewhat inconsistent",
                 "demo": ""
