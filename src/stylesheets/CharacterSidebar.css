@@ -113,7 +113,7 @@
     /* TODO: When moving character sidebar then switching to mobile view, sidebar disappears */
     .character-sidebar {
         width: 100%;
-        /* transform: none; */
+        transform: none;
     }
 
     .character-list {

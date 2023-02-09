@@ -41,8 +41,14 @@ function CharacterSidebar(props) {
                     className={`character-panel ${wip ? "work-in-progress" : ""}`}
                     key={`character-panel-${characterName}`}
                     onClick={() => {
-                        window.scrollTo(0, 0)
+                        // Somewhat dumb solution to scroll to character page once loaded
                         props.func(characterName)
+                        let topbar = document.getElementsByClassName("character-topbar")[0]
+                        if (!topbar) setTimeout(() => {
+                            topbar = document.getElementsByClassName("character-topbar")[0]
+                            topbar.scrollIntoView()
+                        }, 50)
+                        else topbar.scrollIntoView()
                         ToggleSidebar()
                     }}
                 >
@@ -54,11 +60,9 @@ function CharacterSidebar(props) {
 
         // Return the resulting HTML code
         return (
-            <>
-                <section className="character-list">
-                    {returnHTML}
-                </section>
-            </>
+            <section className="character-list">
+                {returnHTML}
+            </section>
         )
     }
 
@@ -118,7 +122,7 @@ function GetCharacters() {
         '-Kunimitsu',
         '-Lars',
         '-Law',
-        'Lee',
+        '-Lee',
         '-Lei',
         '-Leo',
         '-Leroy',
