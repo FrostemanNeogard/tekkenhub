@@ -6,10 +6,14 @@
 }
 
 .character-sidebar p {
-    transform: rotateZ(180deg) translateX(-0.3rem)
+    transform: rotateZ(0) translateX(-0.3rem)
 }
 
-.character-sidebar.hidden, .character-sidebar.hidden p {
+.character-sidebar.hidden p {
+    transform: rotateZ(180deg) translateX(0)
+}
+
+.character-sidebar.hidden {
     transform: none
 }
 
