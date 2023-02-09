@@ -1,122 +1,87 @@
 import '../../stylesheets/CharacterSidebar.css';
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import $ from 'jquery';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
-class CharacterSidebar extends Component {
+function CharacterSidebar(props) {
 
-    constructor(props) {
-        super(props);
-        this.state = {displayingCharacterList: "false"};
+    let [displayingSidebar, updateSidebarState] = useState(false)
+
+    const ToggleSidebar = () => {
+        if (!$(".character-sidebar")) return
+        updateSidebarState(!displayingSidebar)
+        $(".character-sidebar").toggleClass("hidden")
+        $(".dim-background").css("display") === "none" ? $(".dim-background").fadeIn(() => $(".dim-background").show()) : $(".dim-background").fadeOut(() => $(".dim-background").hide())
     }
 
-    updateDisplayingCharacterList = () => {
-        this.setState({displayingCharacterList: !this.state.displayingCharacterList});
-    }
 
-    render() {
-        return (
-            <section className="character-sidebar">
-                <div className='dim-background'></div>
-                <div className='show-character-sidebar' onClick={() => {
-                    MoveCharacterSidebar(this.state.displayingCharacterList);
-                    this.updateDisplayingCharacterList(); 
-                }}>
-                    <div>
-                        <h4>Character List</h4>
-                        <p><FontAwesomeIcon icon={faArrowRight}/></p>
-                    </div>
-                </div>
-                <GetCharacterPanels func={this.props.func}/>
-            </section>
-        )
-    }
-}
+    // Function to create an article for each character including an image and a heading
+    const GetCharacterPanels = (props) => {
 
-function MoveCharacterSidebar(stateBool) {
-    if (stateBool) {
-        return (
-            $(".dim-background").fadeIn(() => $(".dim-background").show()),
+        let returnHTML = [];
 
-            $("html").css({
-                'overflow-y': 'hidden',
-            }),
+        // TEMPORARY way of getting an array of all characters
+        let characterArray = GetCharacters();
 
-            $(".character-sidebar").css({
-                'transform': 'none'
-            }),
+        // Get all images from ../images/character_panels/small
+        let characterImages = ImportAll(require.context('../../images/character_panels/small', false, /\.png$/));
 
-            $(".show-character-sidebar p").css({
-                'transform': 'rotate(180deg) translateX(-5px)'
-            })
+        // For each character, create a character-panel article for them
+        for (let i = 0; i < characterArray.length; i++) {
+            let characterName = characterArray[i];
+            let wip = false;
+            if (characterArray[i].startsWith('-')) {
+                wip = true;
+                characterName = characterName.substring(1);
+            }
+
+            returnHTML.push(
+                <article
+                    className={`character-panel ${wip ? "work-in-progress" : ""}`}
+                    key={`character-panel-${characterName}`}
+                    onClick={() => {
+                        window.scrollTo(0, 0)
+                        props.func(characterName)
+                        ToggleSidebar()
+                    }}
+                >
+                    <img src={characterImages[i]} alt={characterName} />
+                    <h2>{characterName}</h2>
+                </article>
             )
         }
-        
-    return (
-            $("html").css({
-            'overflow-y': 'scroll',
-        }),
-        
-        $(".dim-background").fadeOut(() => $(".dim-background").hide()),
-        
-        $(".character-sidebar").css({
-            'transform': 'translateX(-100%)'
-        }),
-        
-        $(".show-character-sidebar p").css({
-            'transform': 'rotate(0deg)',
-        })
-    )
-}
 
-// Function to create an article for each character including an image and a heading
-function GetCharacterPanels(props) {
-
-    let returnHTML = [];
-
-    // TEMPORARY way of getting an array of all characters
-    let characterArray = GetCharacters();
-
-    // Get all images from ../images/character_panels/small
-    let characterImages = ImportAll(require.context('../../images/character_panels/small', false, /\.png$/));
-
-    // For each character, create a character-panel article for them
-    for (let i = 0; i < characterArray.length; i++) {
-        let characterName = characterArray[i];
-        let wip = false;
-        if (characterArray[i].startsWith('-')) {
-            wip = true;
-            characterName = characterName.substring(1);
-        }
-
-        returnHTML.push (
-            <article 
-                className={`character-panel ${wip ? "work-in-progress" : ""}`}
-                key={`character-panel-${characterName}`}
-                onClick={() => {
-                    window.scrollTo(0, 0)
-                    props.func(characterName)
-                }}
-            >
-                <img src={characterImages[i]} alt={characterName} />
-                <h2>{characterName}</h2>
-            </article>
+        // Return the resulting HTML code
+        return (
+            <>
+                <section className="character-list">
+                    {returnHTML}
+                </section>
+            </>
         )
     }
 
-    // Return the resulting HTML code
     return (
-    <>
-        <section className="character-list">   
-            {returnHTML}
+        <section className="character-sidebar">
+            <div className='dim-background'></div>
+            <div className='show-character-sidebar' onClick={() => {
+                ToggleSidebar()
+            }}>
+                <div>
+                    <h4>Character List</h4>
+                    <p><FontAwesomeIcon icon={faArrowRight}/></p>
+                </div>
+            </div>
+            <GetCharacterPanels func={props.func}/>
         </section>
-    </>
     )
+
 }
 
-// TODO: Maybe fix this, I'm not sure if it's THAT bad or not.
 
+
+// TODO: Maybe fix this, I'm not sure if it's THAT bad or not.
 // (currently temporary) function to get the names of all characters
 // which is used in the creation of their panels in the sidebar
 // If name starts with "-", it is work in progress.
