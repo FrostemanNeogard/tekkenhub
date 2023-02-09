@@ -9,8 +9,8 @@ body, html { padding: 0; margin: 0; } *, *::before, *::after { box-sizing: borde
     --primary-bg: #080808;
     --secondary-bg: #2a2a2b;
     --right-side-content-bg: #1f1f1f;
-    --character-sidebar-bg: rgba(54, 54, 54, 0.6);
-    --character-sidebar-bg-hover: rgba(54, 54, 54, 0.6);
+    --character-sidebar-bg: rgba(54, 54, 54, 1);
+    --character-sidebar-bg-hover: rgba(54, 54, 54, 1);
 
     --primary-text-color: white;
     --secondary-text-color: black;
