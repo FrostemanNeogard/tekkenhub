@@ -10,6 +10,7 @@ function CharacterSidebar(props) {
 
     const ToggleSidebar = () => {
         if (!$(".character-sidebar")) return
+        displayingSidebar ? $("html").css({ 'overflow-y': 'scroll' }) : $("html").css({ 'overflow-y': 'hidden' })
         updateSidebarState(!displayingSidebar)
         $(".character-sidebar").toggleClass("hidden")
         $(".dim-background").css("display") === "none" ? $(".dim-background").fadeIn(() => $(".dim-background").show()) : $(".dim-background").fadeOut(() => $(".dim-background").hide())
